@@ -10,3 +10,13 @@
     justify-content: center;
     padding: 20px 0;
 }
+img.logo {
+    max-width: 90%;
+    height: auto;
+}
+
+@media only screen and (min-width: 400px) { /*desktop*/
+    img.logo {
+        width: 400px;
+    }
+}
