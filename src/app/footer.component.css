@@ -1,0 +1,24 @@
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background-color: #85E0E0;
+    opacity: 1;
+    }
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0 10px 20px 10px;
+}
+.center-container {
+	display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+	align-items: center;
+    justify-content: center;
+}

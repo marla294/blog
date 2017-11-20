@@ -5,12 +5,14 @@ import { MatListModule }			from '@angular/material';
 
 import { AppComponent } 			from './app.component';
 import { HeaderComponent }			from './header.component';
+import { FooterComponent }			from './footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
