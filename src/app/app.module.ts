@@ -9,6 +9,7 @@ import { HomeComponent }              from './home.component';
 import { HeaderComponent }			      from './header.component';
 import { FooterComponent }			      from './footer.component';
 import { PostContainerComponent }     from './post-container.component';
+import { PostComponent }              from './post.component';
 
 import { PostDirective }              from './post.directive';
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     PostContainerComponent,
+    PostComponent,
     PostDirective
   ],
   imports: [
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     MatListModule,
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
+  entryComponents: [PostComponent],
   providers: [PostService],
   bootstrap: [AppComponent]
 })

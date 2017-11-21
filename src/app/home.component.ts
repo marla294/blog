@@ -15,6 +15,5 @@ export class HomeComponent {
 
 	ngOnInit() {
 		this.posts = this.postService.getPosts();
-		console.log(this.posts);
 	}
 }
