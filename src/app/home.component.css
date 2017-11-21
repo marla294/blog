@@ -1,0 +1,14 @@
+.post-list { /*mobile*/
+  padding: 20px 0px 0px 0px;
+}
+.post-list a {
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 800px) { /*desktop*/
+  .post-list {
+    padding: 20px 40px 0px 40px;
+  }
+}
