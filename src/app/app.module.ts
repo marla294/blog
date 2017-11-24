@@ -8,16 +8,13 @@ import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
 import { HeaderComponent }			      from './header.component';
 import { FooterComponent }			      from './footer.component';
-import { PostContainerComponent }     from './post-container.component';
 import { PostComponent }              from './post.component';
-
-import { PostDirective }              from './post.directive';
 
 import { PostService }                from './post.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, data: { state: 'home' } },
-  { path: 'post', component: PostContainerComponent, data: { state: 'post' } },
+  { path: 'post', component: PostComponent, data: { state: 'post' } },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -27,9 +24,7 @@ const appRoutes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PostContainerComponent,
-    PostComponent,
-    PostDirective
+    PostComponent
   ],
   imports: [
     BrowserModule,

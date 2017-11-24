@@ -28,4 +28,5 @@ export class PostContainerComponent implements AfterViewInit {
 		let componentRef = viewContainerRef.createComponent(componentFactory);
 		(componentRef.instance).post = this.post;
 	}
+
 }
