@@ -13,8 +13,8 @@ import { PostComponent }              from './post.component';
 import { PostService }                from './post.service';
 
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent, data: { state: 'home' } },
-  { path: 'post', component: PostComponent, data: { state: 'post' } },
+  { path: 'home', component: HomeComponent, data: { state: 'home'} },
+  { path: 'post/:id', component: PostComponent, data: { state: 'post'} },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
@@ -30,10 +30,10 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
-    RouterModule.forRoot(appRoutes, {useHash: true})
+    RouterModule.forRoot(appRoutes)
   ],
-  entryComponents: [PostComponent],
   providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
