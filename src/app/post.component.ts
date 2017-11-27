@@ -14,6 +14,7 @@ import { Post }										from './post';
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;
 	postID: number;
+	post: Post;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -27,7 +28,10 @@ export class PostComponent implements OnInit {
 				this.service.getPost(params.get('id'))
 			);
 		let subscription = this.post$.subscribe(
-			value => {this.postID = +value.id}
+			value => {
+				this.post = value;
+				this.postID = +value.id;
+			}
 		);
 	}
 }
