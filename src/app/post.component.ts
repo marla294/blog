@@ -13,8 +13,8 @@ import { Post }										from './post';
 })
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;
-	postID: number;
 	post: Post;
+	postID: number;
 
 	constructor(
 		private route: ActivatedRoute,
