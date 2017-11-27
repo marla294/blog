@@ -1,4 +1,4 @@
-import { Injectable }		from '@angular/core';
+import { Injectable, OnInit }		from '@angular/core';
 import { Observable }		from 'rxjs/Observable';
 import { HttpClient }		from '@angular/common/http';
 import 'rxjs/add/observable/of';
@@ -15,7 +15,13 @@ const POSTS = [
 @Injectable()
 export class PostService {
 	constructor(private http: HttpClient) {}
+	results: string[];
+
 	getPosts() {
+		this.http.get('./assets/data/api/posts.json').subscribe(data => {
+			this.results = data['posts'];
+		});
+		console.log(this.results);
 		return Observable.of(POSTS);
 	}
 

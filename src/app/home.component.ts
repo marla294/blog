@@ -19,7 +19,7 @@ import { Post }					from './post';
 	`,
 	styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 	posts$: Observable<Post[]>;
 
 	constructor(
