@@ -1,5 +1,6 @@
 import { Injectable }		from '@angular/core';
 import { Observable }		from 'rxjs/Observable';
+import { HttpClient }		from '@angular/common/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
@@ -13,6 +14,7 @@ const POSTS = [
 
 @Injectable()
 export class PostService {
+	constructor(private http: HttpClient) {}
 	getPosts() {
 		return Observable.of(POSTS);
 	}
