@@ -1,3 +1,4 @@
+
 import { Component, OnInit } 						from '@angular/core';
 import { NgSwitch, NgSwitchCase }					from '@angular/common';
 import { Router, ActivatedRoute, ParamMap }			from '@angular/router';
@@ -23,6 +24,7 @@ export class PostComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
+		console.log('onInit from Post Component');
 		this.post$ = this.route.paramMap
 			.switchMap((params: ParamMap) => 
 				this.service.getPost(params.get('id'))

@@ -23,11 +23,12 @@ export class HomeComponent implements OnInit {
 	posts$: Observable<Post[]>;
 
 	constructor(
-		private postService: PostService,
+		private service: PostService,
 		private router: Router) {}
 
 	ngOnInit() {
-		this.posts$ = this.postService.getPosts();
+		console.log('init from home component');
+		this.posts$ = this.service.getPosts();
 	}
 
 	goToPost(post: Post) {
