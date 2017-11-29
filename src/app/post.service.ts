@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 import { Post }				from './post';
 
-/* The following class and interface need to be around to tell what to expect from the JSON response data */
+/* The following class and interface tell what to expect from the JSON response data */
 class PostJSON {
 	constructor(public id: string, public title: string, public date: string) {}
 }
@@ -29,5 +29,32 @@ export class PostService {
 		return this.getPosts()
 						.map(posts => posts
 						.find(post => post.id === id));
+	}
+
+	sortPosts(sortBy: string): Observable<Post[]> {
+		switch(sortBy) {
+			case 'idAsc': // 1->3
+				return this.getPosts()
+						.map(posts => posts
+						.sort((a, b) => +a.id - +b.id);
+				break;
+			case 'idDesc': //3->1
+				return this.getPosts()
+						.map(posts => posts
+						.sort((a, b) => +b.id - +a.id);
+				break;
+			case 'dateAsc': //earlier->later
+				return this.getPosts()
+						.map(posts => posts
+						.sort((a, b) => +a.date - +b.date);
+				break;
+			case 'dateDesc': //later->earlier
+				return this.getPosts()
+						.map(posts => posts
+						.sort((a, b) => +b.date - +a.date);
+				break;
+			default:
+				return this.getPosts();
+		}
 	}
 }

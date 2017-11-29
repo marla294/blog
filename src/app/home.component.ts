@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 		private router: Router) {}
 
 	ngOnInit() {
-		this.posts$ = this.service.getPosts();
+		this.posts$ = this.service.sortPosts('idDesc');
 	}
 
 	goToPost(post: Post) {
