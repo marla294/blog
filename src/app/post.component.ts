@@ -14,8 +14,6 @@ import { Post }										from './post';
 })
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;
-	post: Post;
-	postID: number;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -25,14 +23,8 @@ export class PostComponent implements OnInit {
 
 	ngOnInit() {
 		this.post$ = this.route.paramMap
-			.switchMap((params: ParamMap) => 
+			.switchMap((params: ParamMap) =>
 				this.service.getPost(params.get('id'))
 			);
-		let subscription = this.post$.subscribe(
-			value => {
-				this.post = value;
-				this.postID = +value.id;
-			}
-		);
 	}
 }

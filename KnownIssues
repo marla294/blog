@@ -4,8 +4,15 @@ I don't have a bug tracking system right now, so... ¯\_(ツ)_/¯
 
 Severity: 0 = Showstopper, 1 = Bad, 2 = Eh, 3 = Won't Fix
 
------------------
-Title: If you navigate to a post page and refresh, the page won't render properly, and navigating around the site is just screwed up until you refresh the home page.
+----------------- OPEN ------------------
+----------------- Bug
+Title: 11/29/17 - Need to add 404 page to router
+
+Severity: 2
+
+----------------- FIXED -----------------
+----------------- Bug
+Title: 11/28/17 - If you navigate to a post page and refresh, the page won't render properly, and navigating around the site is just screwed up until you refresh the home page.
 
 Severity: 1
 
@@ -20,3 +27,6 @@ Cause:
 Possible solution:
 * The most promising idea seems to be looking into route guards, so that the user can't navigate to a post without going to the home page first.
 * The other idea is trying to figure out how to do a .then() type thing on the http subscription.
+
+SOLUTION: 11/29/17
+* The service was subscribing to one of the observables that it was returning.  In retrospect, that was a bit silly of me.  It kind of defeats the point of using Observables if you're just going to subscribe to them right in the place where you get them.  I changed the service to only return Observables out of the functions.  Then I changed the components that use the service to subscribe to the returned Observables themselves and use them where they want them.
