@@ -61,8 +61,9 @@ export class PostService {
 		return output;
 	}
 
-	/* Trims the length of the Posts array to the specified length */
+	/* Trims the length of the Posts array to the specified length
 	trimPosts(length: number): Observable<Post[]> {
 
 	}
+	*/
 }
