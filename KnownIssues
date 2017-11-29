@@ -1,0 +1,22 @@
+Known Issues
+
+I don't have a bug tracking system right now, so... ¯\_(ツ)_/¯
+
+Severity: 0 = Showstopper, 1 = Bad, 2 = Eh, 3 = Won't Fix
+
+-----------------
+Title: If you navigate to a post page and refresh, the page won't render properly, and navigating around the site is just screwed up until you refresh the home page.
+
+Severity: 1
+
+Steps to reproduce:
+* From home page, click on one of the posts, so you get to a page like /post/1
+* Refresh browser
+* Page doesn't render.  Only thing that fixes is to go back to the home page and refresh
+
+Cause: 
+* I believe that the cause is the async loading of the JSON into the POSTS array.  The post component needs to load that array before the page can render.  But the subscription has to happen first too.  I can't figure out how to subscribe, and then tell http to process the subscription again before the page loads.  The only thing I've gotten to sorta work (which is janky) is to have the loadPosts() function be called from the template.
+
+Possible solution:
+* The most promising idea seems to be looking into route guards, so that the user can't navigate to a post without going to the home page first.
+* The other idea is trying to figure out how to do a .then() type thing on the http subscription.
