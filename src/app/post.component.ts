@@ -9,7 +9,8 @@ import { Post }										from './post';
 
 @Component({
 	selector: 'post-component',
-	templateUrl: 'post.component.html'
+	templateUrl: 'post.component.html',
+	styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;

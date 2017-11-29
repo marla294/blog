@@ -17,9 +17,7 @@ export class PostService {
 	getJSONPosts(): void {
 		/* Call this to load the posts into POSTS array */
 		this.http.get<PostJSONResponse>('./assets/data/api/posts.json').subscribe(data => {
-			
 			Object.assign(this.POSTS, data.posts.map(post => new Post(post.id, post.title, post.date.toString())))
-
 		});
 	}
 
