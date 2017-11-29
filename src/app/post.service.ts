@@ -32,29 +32,31 @@ export class PostService {
 	}
 
 	sortPosts(sortBy: string): Observable<Post[]> {
+		let output: Observable<Post[]>
 		switch(sortBy) {
 			case 'idAsc': // 1->3
-				return this.getPosts()
+				output = this.getPosts()
 						.map(posts => posts
 						.sort((a, b) => +a.id - +b.id));
 				break;
 			case 'idDesc': //3->1
-				return this.getPosts()
+				output = this.getPosts()
 						.map(posts => posts
 						.sort((a, b) => +b.id - +a.id));
 				break;
 			case 'dateAsc': //earlier->later
-				return this.getPosts()
+				output = this.getPosts()
 						.map(posts => posts
 						.sort((a, b) => +a.date - +b.date));
 				break;
 			case 'dateDesc': //later->earlier
-				return this.getPosts()
+				output = this.getPosts()
 						.map(posts => posts
 						.sort((a, b) => +b.date - +a.date));
 				break;
 			default:
-				return this.getPosts();
+				output = this.getPosts();
 		}
+		return output;
 	}
 }
