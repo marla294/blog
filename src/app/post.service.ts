@@ -1,7 +1,7 @@
 import { Injectable }		from '@angular/core';
 import { HttpClient }		from '@angular/common/http';
 import { Observable }		from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+//import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
 import { Post }				from './post';
@@ -31,6 +31,7 @@ export class PostService {
 						.find(post => post.id === id));
 	}
 
+	/* Sorts posts by specified attribute */
 	sortPosts(sortBy: string): Observable<Post[]> {
 		let output: Observable<Post[]>
 		switch(sortBy) {
@@ -58,5 +59,10 @@ export class PostService {
 				output = this.getPosts();
 		}
 		return output;
+	}
+
+	/* Trims the length of the Posts array to the specified length */
+	trimPosts(length: number): Observable<Post[]> {
+
 	}
 }
