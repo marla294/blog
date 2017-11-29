@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
 		private router: Router) {}
 
 	ngOnInit() {
-		console.log('init from home component');
 		this.posts$ = this.service.getPosts();
 	}
 

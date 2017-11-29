@@ -12,28 +12,26 @@ interface PostJSONResponse {
 
 @Injectable()
 export class PostService {
-	POSTS2 = [];
+	POSTS: Post[] = [];
 	constructor(private http: HttpClient) {}
 
 	getJSONPosts(): void {
-		/* Call this to load the posts into POSTS2 array */
-		console.log('getJSONPosts() from post service');
+		/* Call this to load the posts into POSTS array */
 		this.http.get<PostJSONResponse>('./assets/data/api/posts.json').subscribe(data => {
-			for (let i = 0; i < data.posts.length; i++) {
-				this.POSTS2[i] = new Post(data.posts[i].id, data.posts[i].title, data.posts[i].date.toString());
-			}
+			
+			Object.assign(this.POSTS, data.posts.map(post => new Post(post.id, post.title, post.date.toString())))
+
 		});
 	}
 
 	getPosts() {
-		/* Call this to return an observable of the POST2 array */
+		/* Call this to return an observable of the POSTS array */
 		this.getJSONPosts();
-		return Observable.of(this.POSTS2);
+		return Observable.of(this.POSTS);
 	}
 
 	getPost(id: string) {
 		/* Call this to return an observable of a single post found by id */
-		console.log('getPost(id) from post service');
-		return Observable.of(this.POSTS2.find(post => post.id === id));
+		return Observable.of(this.POSTS.find(post => post.id === id));
 	}
 }

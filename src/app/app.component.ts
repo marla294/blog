@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition, animateChild }	from '@angular/animations';
 
 @Component({
@@ -14,7 +14,8 @@ import { trigger, state, style, animate, transition, animateChild }	from '@angul
   ]
 })
 export class AppComponent {
-  	getRoute(outlet) {
+
+    getRoute(outlet) {
 	    return outlet.activatedRouteData.state;
-	}
+	  }
 }
