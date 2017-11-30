@@ -6,9 +6,21 @@ Severity: 0 = Showstopper, 1 = Bad, 2 = Eh, 3 = Won't Fix
 
 ----------------- OPEN ------------------
 ----------------- Bug
-Title: 11/29/17 - Need to add 404 page to router
+Title: 11/29/17 - Add 404 page to router
 
 Severity: 2
+
+----------------- CR
+Title: 11/30/17 - Add same router animation used on router to the "show more" functionality
+
+Severity: 2
+
+Steps to reproduce:
+* Click the "Show More..." link
+* Note the animation occurs instantly, instead of having the same smooth transition that the router does.  It would just look a whole lot more graceful if it worked the same way as the router.
+
+Possible solution:
+* Now that I got animations to work, thanks to Angular CLI (yay), go back through the Angular animations cookbook in the docs
 
 ----------------- FIXED -----------------
 ----------------- Bug

@@ -16,15 +16,21 @@ import { Post }					from './post';
 	    <h2 mat-line>{{post.title}}</h2>
 	    <p mat-line><i>{{post.date | date}}</i></p>
 	  </a>
-	  <a mat-list-item>Show More...</a>
+	  <a mat-list-item *ngIf="posts$ | async as posts" (click)="showMore(posts.length)">Show More...</a>
 	</mat-list>
 	`,
 	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+	//List of posts to show on the page
 	posts$: Observable<Post[]>;
 
-	defaultPostsPerPage: number = 1; //How many posts to show per page
+	/* -- Variables for arranging the array of posts on the home page -- */
+	//Variable for sort order
+	sortOrder: string = 'idDesc'; //What to sort posts by and what order
+
+	//Variables for "show more" functionality
+	defaultPostsPerPage: number = 3; //How many posts to show per page
 	showMoreAmount: number = 1; //The amount of additional posts to show when button clicked
 
 	constructor(
@@ -32,11 +38,15 @@ export class HomeComponent implements OnInit {
 		private router: Router) {}
 
 	ngOnInit() {
-		this.posts$ = this.service.sortPosts('idDesc');
+		this.posts$ = this.service.getPostsWithOperators(this.sortOrder, this.defaultPostsPerPage);
 	}
 
 	goToPost(post: Post) {
 		this.router.navigate(['/post', post.id]);
+	}
+
+	showMore(currentLength: number) {
+		this.posts$ = this.service.getPostsWithOperators(this.sortOrder, currentLength + this.showMoreAmount);
 	}
 
 }

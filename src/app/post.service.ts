@@ -31,39 +31,53 @@ export class PostService {
 						.find(post => post.id === id));
 	}
 
+	getPostsWithOperators(sortBy: string, length: number): Observable<Post[]> {
+		let inputArray = this.getPosts();
+		let sortedArray = this.sortPosts(inputArray, sortBy);
+		let trimmedArray = this.trimPosts(sortedArray, length);
+		return trimmedArray;
+	}
+
 	/* Sorts posts by specified attribute */
-	sortPosts(sortBy: string): Observable<Post[]> {
+	sortPosts(obArray: Observable<Post[]>, sortBy: string): Observable<Post[]> {
 		let output: Observable<Post[]>
 		switch(sortBy) {
 			case 'idAsc': // 1->3
-				output = this.getPosts()
+				output = obArray
 						.map(posts => posts
 						.sort((a, b) => +a.id - +b.id));
 				break;
 			case 'idDesc': //3->1
-				output = this.getPosts()
+				output = obArray
 						.map(posts => posts
 						.sort((a, b) => +b.id - +a.id));
 				break;
 			case 'dateAsc': //earlier->later
-				output = this.getPosts()
+				output = obArray
 						.map(posts => posts
 						.sort((a, b) => +a.date - +b.date));
 				break;
 			case 'dateDesc': //later->earlier
-				output = this.getPosts()
+				output = obArray
 						.map(posts => posts
 						.sort((a, b) => +b.date - +a.date));
 				break;
 			default:
-				output = this.getPosts();
+				output = obArray;
 		}
 		return output;
 	}
 
-	/* Trims the length of the Posts array to the specified length
-	trimPosts(length: number): Observable<Post[]> {
-
+	/* Trims the length of the Posts array to the specified length */
+	trimPosts(obArray: Observable<Post[]>, length: number): Observable<Post[]> {
+		return obArray.map(posts => posts
+				  .slice(0, length));
 	}
-	*/
 }
+
+
+
+
+
+
+
