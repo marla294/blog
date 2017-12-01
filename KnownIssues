@@ -1,6 +1,7 @@
 Known Issues
 
 I don't have a bug tracking system right now, so... ¯\_(ツ)_/¯
+These issues will eventually be tracked in Github, but for now, this is my working list.
 
 Severity: 0 = Showstopper, 1 = Bad, 2 = Eh, 3 = Won't Fix
 
@@ -21,6 +22,71 @@ Steps to reproduce:
 
 Possible solution:
 * Now that I got animations to work, thanks to Angular CLI (yay), go back through the Angular animations cookbook in the docs
+
+----------------- CR
+Title: 11/30/17 - Links on the home page have scroll cursor instead of hand (web only)
+
+Severity: 2
+
+Steps to reproduce:
+* Hover over one of the links on the home component on the web.
+* Note that the cursor is a scroll, not the "link" hand.  I want to change it to the link hand.
+
+Cause:
+* Angular Material is probably overwriting the link CSS with the list item CSS.
+
+Possible solution:
+* CSS, baby.
+
+----------------- CR
+Title: 11/30/17 - You can click the links alllll the way over on the right side of the home page (web only)
+
+Severity: 2
+
+Steps to reproduce:
+* Go to Home page
+* Go wayyyy to the right of the link list but still vertically over a link and still on the page
+* Click - it still takes you to a link.  Not a big deal but it's just weird, operationally.
+
+Cause:
+* List items taking up the whole darn screen.
+* Also this spawns another idea - make hovering over the links do an animation to show you when you are hovering
+
+Possible solution:
+* Make the list items less wide.  And, CSS, baby. ;)
+* Entered another CR for having an animation when hovering over links
+
+----------------- CR
+Title: 11/30/17 - Make little animation when you are hovering over the links
+
+Severity: 1
+
+Steps to reproduce:
+* Go to Home page
+* Hover over a link
+* Nothing at all happens.
+* The reason I put this as a 1 is that it would make the blog easier and more intuitive to use if the links showed when you are hovering over them.
+
+Cause:
+* I don't have a :hover on links in my CSS yet
+
+Possible solution:
+* Add a :hover on links in my CSS
+* Might want to add a transition to that as well, same as the router
+
+----------------- Bug
+Title: 12/01/17 - Animations not working on Safari on my iPhone
+
+Severity: 1
+
+Steps to reproduce:
+* Browse to website on iPhone
+* Click on a link - note that it comes up instantly, instead of doing the transition animation
+
+Possible solution:
+* ¯\_(ツ)_/¯
+* Maybe it is browser specific and not device specific.  I'll have to try it on Safari on my computer to find out.
+
 
 ----------------- FIXED -----------------
 ----------------- Bug
