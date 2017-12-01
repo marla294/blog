@@ -6,6 +6,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { PostService }								from './post.service';
 import { Post }										from './post';
+import { PostNavComponent }							from './post-nav.component';
 
 @Component({
 	selector: 'post-component',

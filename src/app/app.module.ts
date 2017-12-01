@@ -14,6 +14,7 @@ import { HomeComponent }              from './home.component';
 import { HeaderComponent }			      from './header.component';
 import { FooterComponent }			      from './footer.component';
 import { PostComponent }              from './post.component';
+import { PostNavComponent }           from './post-nav.component';
 
 /* --- Service Imports --- */
 import { PostService }                from './post.service';
@@ -24,7 +25,8 @@ import { PostService }                from './post.service';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PostComponent
+    PostComponent,
+    PostNavComponent
   ],
   imports: [
     BrowserModule,

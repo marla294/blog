@@ -19,18 +19,21 @@ interface PostJSONResponse {
 export class PostService {
 	constructor(private http: HttpClient) {}
 
-	getPosts(): Observable<Post[]> {
+	/* Internal getPosts function to grab the JSON - everything else works off this */
+	private getPosts(): Observable<Post[]> {
 		return this.http.get<PostJSONResponse>('./assets/data/api/posts.json')
 						.map(res => res.posts
 						.map(post => new Post(post.id, post.title, post.date)));
 	}
 
+	/* Called by the Post component when looking up current post */
 	getPost(id: string): Observable<Post> {
 		return this.getPosts()
 						.map(posts => posts
 						.find(post => post.id === id));
 	}
 
+	/* The main "get post" method that is called by the Home component */
 	getPostsWithOperators(sortBy: string, length: number): Observable<Post[]> {
 		let inputArray = this.getPosts();
 		let sortedArray = this.sortPosts(inputArray, sortBy);

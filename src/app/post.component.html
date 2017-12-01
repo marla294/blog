@@ -1,4 +1,5 @@
 <div *ngIf="post$ | async as post">
+<post-nav [postID]="post.id"></post-nav>
 <h1>{{post.title}}</h1>
 <h3>{{post.date | date}}</h3>
 
