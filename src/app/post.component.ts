@@ -15,6 +15,7 @@ import { PostNavComponent }							from './post-nav.component';
 })
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;
+	postsLength: number;
 
 	constructor(
 		private route: ActivatedRoute,
@@ -27,5 +28,6 @@ export class PostComponent implements OnInit {
 			.switchMap((params: ParamMap) =>
 				this.service.getPost(params.get('id'))
 			);
+		this.service.getPosts().subscribe(posts => this.postsLength = posts.length);
 	}
 }

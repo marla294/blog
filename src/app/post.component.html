@@ -1,7 +1,8 @@
 <div *ngIf="post$ | async as post">
-<post-nav [postID]="post.id"></post-nav>
+<post-nav [postIDInput]="post.id" [numOfPosts]="postsLength"></post-nav>
 <h1>{{post.title}}</h1>
 <h3>{{post.date | date}}</h3>
+
 
 <div [ngSwitch]="post.id">
 
