@@ -3,9 +3,12 @@ import { Component, Input, OnInit }	from '@angular/core';
 @Component({
 	selector: 'post-nav',
 	template: `
-			<a mat-list-item routerLink="/post/{{olderPostID}}" routerLinkActive="active" (click)="onOlder()">< Older</a>
-			<a mat-list-item routerLink="/post/{{newerPostID}}" routerLinkActive="active" (click)="onNewer()">Newer ></a>
-	`
+			<div class="flex-container">
+				<a class="older" routerLink="/post/{{olderPostID}}" routerLinkActive="active" (click)="onOlder()">< Older</a>
+				<a class="newer" routerLink="/post/{{newerPostID}}" routerLinkActive="active" (click)="onNewer()">Newer ></a>
+			</div>
+	`,
+	styleUrls: ['./post-nav.component.css']
 })
 export class PostNavComponent implements OnInit {
 	@Input() postIDInput: string;
@@ -56,9 +59,6 @@ export class PostNavComponent implements OnInit {
 }
 
 /* To Do
-- Styling
-	- Older on left side, Newer on right
-	- Flexbox
 - Transition animation
 	- Need to bring in that animation from app component module here
 */

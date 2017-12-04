@@ -87,6 +87,18 @@ Possible solution:
 * ¯\_(ツ)_/¯
 * Maybe it is browser specific and not device specific.  I'll have to try it on Safari on my computer to find out.
 
+----------------- CR
+Title: 12/04/17 - Have "Show More" link disappear when there's no more to show
+
+Severity: 2
+
+Steps to reproduce:
+* Go to the home page
+* Click "show more" until no more blog posts show
+* Note that "Show More" link is still on the page.  Just looks confusing.
+
+Solution:
+* ngIF that out of there when there aren't more links to show
 
 ----------------- FIXED -----------------
 ----------------- Bug
