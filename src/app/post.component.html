@@ -1,5 +1,9 @@
 <div *ngIf="post$ | async as post">
+
 <post-nav [postIDInput]="post.id" [numOfPosts]="postsLength"></post-nav>
+
+<div [@postChangeAnimation]="post.id">
+	
 <h2><i>{{post.date | date}}</i> - {{post.title}}</h2>
 
 <div [ngSwitch]="post.id">
@@ -73,4 +77,5 @@
 <div *ngSwitchCase="4" class="post">
 <p>Lorem ipsum dolor sit amet, sit te munere mnesarchum, est eu vidit solet impedit. Discere mandamus quo cu, ad saepe placerat eam, utinam possit mollis ex usu. Tation facilisis constituam vim id, at sea nullam sensibus efficiantur. Ne eum autem adipiscing, solum zril periculis mea ex. Ei dico esse essent eum, qui mucius voluptua cu. Ea per maiorum ancillae lobortis, cum omnis assum constituto an.</p>
 
+</div>
 </div>
