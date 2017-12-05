@@ -7,6 +7,13 @@
   font-size: 20px;
 }
 
+.post-list a:not(.last-post) {
+}
+
+.last-post {
+	
+}
+
 @media only screen and (min-width: 800px) { /*desktop*/
   .post-list {
     padding: 20px 40px 100px 40px;

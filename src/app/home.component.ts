@@ -2,6 +2,7 @@ import { Component, OnInit }	from '@angular/core';
 import { Router }  				from '@angular/router';
 import { Observable }			from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { trigger, state, style, animate, transition, animateChild }	from '@angular/animations';
 
 import { PostService }			from './post.service';
 import { Post }					from './post';
@@ -12,33 +13,45 @@ import { Post }					from './post';
 	selector: 'home',
 	template: `
 	<mat-list class="post-list">
-	  <a mat-list-item *ngFor="let post of posts$ | async" (click)=goToPost(post)>
+	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post) [class.last-post]="last" [@listChangeAnimation]="postsLength">
 	    <h2 mat-line>{{post.title}}</h2>
 	    <p mat-line><i>{{post.date | date}}</i></p>
 	  </a>
-	  <a mat-list-item *ngIf="posts$ | async as posts" (click)="showMore(posts.length)">Show More...</a>
+	  <div *ngIf="posts$ | async as posts">
+	  	<a mat-list-item *ngIf="posts.length < postsLength" (click)="showMore(posts.length)" [@listChangeAnimation]="postsLength">Show More...</a>
+	  </div>
 	</mat-list>
 	`,
-	styleUrls: ['./home.component.css']
+	styleUrls: ['./home.component.css'],
+	animations: [
+  	trigger('listChangeAnimation', [
+  		transition('void => last-post', [
+  			style({opacity: 0}), animate(500)
+  		])
+  	])
+  	]
 })
 export class HomeComponent implements OnInit {
 	//List of posts to show on the page
 	posts$: Observable<Post[]>;
+	postsLength: number;
 
 	/* -- Variables for arranging the array of posts on the home page -- */
 	//Variable for sort order
 	sortOrder: string = 'idDesc'; //What to sort posts by and what order
 
 	//Variables for "show more" functionality
-	defaultPostsPerPage: number = 3; //How many posts to show per page
+	defaultPostsPerPage: number = 2; //How many posts to show per page
 	showMoreAmount: number = 1; //The amount of additional posts to show when button clicked
 
 	constructor(
 		private service: PostService,
-		private router: Router) {}
+		private router: Router
+	) {}
 
 	ngOnInit() {
 		this.posts$ = this.service.getPostsWithOperators(this.sortOrder, this.defaultPostsPerPage);
+		this.service.getPosts().subscribe(posts => this.postsLength = posts.length);
 	}
 
 	goToPost(post: Post) {
