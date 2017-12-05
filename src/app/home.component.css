@@ -1,5 +1,5 @@
 .post-list { /*mobile*/
-  padding: 20px 0px 0px 0px;
+  padding: 20px 0px 100px 0px;
 }
 .post-list a {
   color: #fff;
@@ -9,6 +9,6 @@
 
 @media only screen and (min-width: 800px) { /*desktop*/
   .post-list {
-    padding: 20px 40px 0px 40px;
+    padding: 20px 40px 100px 40px;
   }
 }
