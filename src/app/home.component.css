@@ -1,6 +1,8 @@
 .post-list { /*mobile*/
   padding: 20px 0px 100px 0px;
 }
+
+
 .post-list a {
   color: #fff;
   font-family: 'PT Sans', sans-serif;
@@ -9,16 +11,10 @@
   transition: color 0.5s;
 }
 
+
 .post-list a:hover {
   color: #b285e0;
   transition: color 0.5s;
-}
-
-.post-list a:not(.last-post) {
-}
-
-.last-post {
-
 }
 
 @media only screen and (min-width: 800px) { /*desktop*/

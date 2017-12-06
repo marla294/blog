@@ -5,7 +5,6 @@ import { Observable }								from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 import { trigger, state, style, animate, transition, animateChild }	from '@angular/animations';
 
-
 import { PostService }								from './post.service';
 import { Post }										from './post';
 import { PostNavComponent }							from './post-nav.component';

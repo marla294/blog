@@ -21,7 +21,7 @@ export class PostService {
 
 	/* getPosts function to grab the JSON - everything else works off this */
 	getPosts(): Observable<Post[]> {
-		return this.http.get<PostJSONResponse>('./assets/data/api/posts.json')
+		return this.http.get<PostJSONResponse>('../assets/data/api/posts.json')
 						.map(res => res.posts
 						.map(post => new Post(post.id, post.title, post.date)));
 	}

@@ -4,6 +4,7 @@ import { NgModule } 				          from '@angular/core';
 import { BrowserAnimationsModule }    from '@angular/platform-browser/animations'
 import { HttpClientModule }           from '@angular/common/http';
 import { AppRoutingModule }           from './app-routing.module';
+import { PostModule }                 from './post/post.module';
 
 /* Material Module Imports */
 import { MatListModule }              from '@angular/material';
@@ -13,27 +14,24 @@ import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
 import { HeaderComponent }			      from './header.component';
 import { FooterComponent }			      from './footer.component';
-import { PostComponent }              from './post.component';
-import { PostNavComponent }           from './post-nav.component';
 
 /* --- Service Imports --- */
-import { PostService }                from './post.service';
+import { PostService }                from './post/post.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent,
-    PostComponent,
-    PostNavComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PostModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

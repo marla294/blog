@@ -2,10 +2,9 @@ import { Component, OnInit }	from '@angular/core';
 import { Router }  				from '@angular/router';
 import { Observable }			from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { trigger, state, style, animate, transition, animateChild }	from '@angular/animations';
 
-import { PostService }			from './post.service';
-import { Post }					from './post';
+import { PostService }			from './post/post.service';
+import { Post }					from './post/post';
 
 
 
@@ -13,23 +12,16 @@ import { Post }					from './post';
 	selector: 'home',
 	template: `
 	<mat-list class="post-list">
-	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post) [class.last-post]="last" [@listChangeAnimation]="postsLength">
+	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post)>
 	    <h2 mat-line>{{post.title}}</h2>
 	    <p mat-line><i>{{post.date | date}}</i></p>
 	  </a>
 	  <div *ngIf="posts$ | async as posts">
-	  	<a mat-list-item *ngIf="posts.length < postsLength" (click)="showMore(posts.length)" [@listChangeAnimation]="postsLength">Show More...</a>
+	  	<a mat-list-item *ngIf="posts.length < postsLength" (click)="showMore(posts.length)">Show More...</a>
 	  </div>
 	</mat-list>
 	`,
-	styleUrls: ['./home.component.css'],
-	animations: [
-  	trigger('listChangeAnimation', [
-  		transition('void => last-post', [
-  			style({opacity: 0}), animate(500)
-  		])
-  	])
-  	]
+	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 	//List of posts to show on the page

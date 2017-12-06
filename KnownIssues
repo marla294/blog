@@ -23,24 +23,6 @@ Steps to reproduce:
 Possible solution:
 * Now that I got animations to work, thanks to Angular CLI (yay), go back through the Angular animations cookbook in the docs
 
------------------ CR
-Title: 11/30/17 - You can click the links alllll the way over on the right side of the home page (web only)
-
-Severity: 2
-
-Steps to reproduce:
-* Go to Home page
-* Go wayyyy to the right of the link list but still vertically over a link and still on the page
-* Click - it still takes you to a link.  Not a big deal but it's just weird, operationally.
-
-Cause:
-* List items taking up the whole darn screen.
-* Also this spawns another idea - make hovering over the links do an animation to show you when you are hovering
-
-Possible solution:
-* Make the list items less wide.  And, CSS, baby. ;)
-* Entered another CR for having an animation when hovering over links
-
 ----------------- Bug
 Title: 12/01/17 - Animations not working on Safari on my iPhone
 
@@ -127,3 +109,24 @@ Possible solution:
 
 SOLUTION: 12/6/17
 * Transition the color of the links to purple when hovering
+
+----------------- CR
+Title: 11/30/17 - You can click the links alllll the way over on the right side of the home page (web only)
+
+Severity: 3
+
+Steps to reproduce:
+* Go to Home page
+* Go wayyyy to the right of the link list but still vertically over a link and still on the page
+* Click - it still takes you to a link.  Not a big deal but it's just weird, operationally.
+
+Cause:
+* List items taking up the whole darn screen.
+* Also this spawns another idea - make hovering over the links do an animation to show you when you are hovering
+
+Possible solution:
+* Make the list items less wide.  And, CSS, baby. ;)
+* Entered another CR for having an animation when hovering over links
+
+SOLUTION: 12/6/17
+* Not going to fix this.  It has grown on me and I kinda like it now.
