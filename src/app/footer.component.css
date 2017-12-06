@@ -10,6 +10,11 @@
     text-decoration: none;
     font-size: 25px;
     padding: 10px;
+    transition: color 0.5s;
+}
+.footer a:hover {
+  color: #b285e0;
+  transition: color 0.5s;
 }
 .center-container {
 	display: -webkit-flexbox;

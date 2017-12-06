@@ -5,13 +5,20 @@
   color: #fff;
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.post-list a:hover {
+  color: #b285e0;
+  transition: color 0.5s;
 }
 
 .post-list a:not(.last-post) {
 }
 
 .last-post {
-	
+
 }
 
 @media only screen and (min-width: 800px) { /*desktop*/
