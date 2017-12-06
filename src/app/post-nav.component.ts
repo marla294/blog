@@ -4,8 +4,12 @@ import { Component, Input, OnInit }	from '@angular/core';
 	selector: 'post-nav',
 	template: `
 			<div class="flex-container">
-				<a class="older" routerLink="/post/{{olderPostID}}" routerLinkActive="active" (click)="onOlder()">< Older</a>
-				<a class="newer" routerLink="/post/{{newerPostID}}" routerLinkActive="active" (click)="onNewer()">Newer ></a>
+				<div>
+					<a class="older" routerLink="/post/{{olderPostID}}" routerLinkActive="active" (click)="onOlder()" *ngIf="postID != 1">< Older</a>
+				</div>
+				<div>
+					<a class="newer" routerLink="/post/{{newerPostID}}" routerLinkActive="active" (click)="onNewer()" *ngIf="postID != numOfPosts">Newer ></a>
+				</div>
 			</div>
 	`,
 	styleUrls: ['./post-nav.component.css']
