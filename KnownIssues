@@ -35,6 +35,7 @@ Steps to reproduce:
 Possible solution:
 * ¯\_(ツ)_/¯
 * Maybe it is browser specific and not device specific.  I'll have to try it on Safari on my computer to find out.
+* I checked and it is definitely due to Safari compatibility woohoo!  So all I need to do is add the animation patch
 
 ----------------- FIXED -----------------
 ----------------- Bug

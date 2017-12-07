@@ -9,6 +9,6 @@
 	transition: color 0.5s;
 }
 .flex-container a:hover {
-  color: #b285e0;
+  color: #eee;
   transition: color 0.5s;
 }
