@@ -14,6 +14,7 @@ import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
 import { HeaderComponent }			      from './header.component';
 import { FooterComponent }			      from './footer.component';
+import { PageNotFoundComponent }      from './page-not-found.component';
 
 /* --- Service Imports --- */
 import { PostService }                from './post/post.service';
@@ -23,7 +24,8 @@ import { PostService }                from './post/post.service';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
