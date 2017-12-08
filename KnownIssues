@@ -6,10 +6,6 @@ These issues will eventually be tracked in Github, but for now, this is my worki
 Severity: 0 = Showstopper, 1 = Bad, 2 = Eh, 3 = Won't Fix
 
 ----------------- OPEN ------------------
------------------ Bug
-Title: 11/29/17 - Add 404 page to router
-
-Severity: 2
 
 ----------------- CR
 Title: 11/30/17 - Add same router animation used on router to the "show more" functionality
@@ -36,6 +32,21 @@ Possible solution:
 * ¯\_(ツ)_/¯
 * Maybe it is browser specific and not device specific.  I'll have to try it on Safari on my computer to find out.
 * I checked and it is definitely due to Safari compatibility woohoo!  So all I need to do is add the animation patch
+
+----------------- CR
+Title: 12/08/17 - Have Page Not Found component show up when you try to navigate to a post number that doesn't exist
+
+Severity: 2
+
+Steps to reproduce:
+* Try to navigate to a post that doesn't exist, for example like, post/1000
+* The page is blank, meaning the Page Not Found component doesn't show up
+
+Cause:
+* I think that it found the Post component, so routing doesn't register that it didn't find the ID
+
+Possible solution:
+* ¯\_(ツ)_/¯
 
 ----------------- FIXED -----------------
 ----------------- Bug
@@ -131,3 +142,12 @@ Possible solution:
 
 SOLUTION: 12/6/17
 * Not going to fix this.  It has grown on me and I kinda like it now.
+
+----------------- Bug
+Title: 11/29/17 - Add 404 page to router
+
+Severity: 2
+
+SOLUTION: 12/8/17
+* Added a Page Not Found component
+* Will need to get it to work on post/id where id is not found
