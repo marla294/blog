@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
 	sortOrder: string = 'idDesc'; //What to sort posts by and what order
 
 	//Variables for "show more" functionality
-	defaultPostsPerPage: number = 2; //How many posts to show per page
-	showMoreAmount: number = 1; //The amount of additional posts to show when button clicked
+	defaultPostsPerPage: number = 10; //How many posts to show per page
+	showMoreAmount: number = 10; //The amount of additional posts to show when button clicked
 	constructor(
 		private service: PostService,
 		private router: Router
