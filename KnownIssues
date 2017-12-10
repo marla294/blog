@@ -34,6 +34,19 @@ Cause:
 Possible solution:
 * ¯\_(ツ)_/¯
 
+----------------- CR
+Title: 12/10/17 - Add a "Home" button to bottom of posts
+
+Severity: 1
+
+Steps to reproduce:
+* Go to any blog post
+* I don't believe it is 100% intuitive that clicking the header icon takes you back to the homepage
+
+Possible solution:
+* Add a "back" link that will show up at the bottom of each post
+* Probably can just put it at the bottom of the Post html page
+
 ----------------- FIXED -----------------
 ----------------- Bug
 Title: 11/28/17 - If you navigate to a post page and refresh, the page won't render properly, and navigating around the site is just screwed up until you refresh the home page.
