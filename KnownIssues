@@ -34,19 +34,6 @@ Cause:
 Possible solution:
 * ¯\_(ツ)_/¯
 
------------------ Bug
-Title: 12/10/17 - Favicon not working
-
-Severity: 1
-
-Steps to reproduce:
-* Browse to website on browser
-* Note that the favicon is not showing up
-
-Possible solution:
-* I'm guessing it has to do with it being in the wrong folder, but not sure
-* Severity 1 because it's annoying
-
 ----------------- FIXED -----------------
 ----------------- Bug
 Title: 11/28/17 - If you navigate to a post page and refresh, the page won't render properly, and navigating around the site is just screwed up until you refresh the home page.
@@ -167,3 +154,20 @@ Possible solution:
 
 SOLUTION: 12/10/17
 * Needed to add polyfill for browsers that aren't Chrome or Firefox
+
+----------------- Bug
+Title: 12/10/17 - Favicon not working
+
+Severity: 1
+
+Steps to reproduce:
+* Browse to website on browser
+* Note that the favicon is not showing up
+
+Possible solution:
+* I'm guessing it has to do with it being in the wrong folder, but not sure
+* Severity 1 because it's annoying
+
+SOLUTION: 12/10/17
+* It had to be in the assets folder.
+* Also updated the index.html file to point to the favicon in the assets folder
