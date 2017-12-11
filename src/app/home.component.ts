@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 	}
 
 	goToPost(post: Post) {
-		this.router.navigate(['/post', post.id]);
+		this.router.navigate(['/blog/post', post.id]);
 	}
 
 	showMore(currentLength: number) {
