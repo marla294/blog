@@ -3,7 +3,7 @@ import { NgSwitch, NgSwitchCase }					from '@angular/common';
 import { Router, ActivatedRoute, ParamMap }			from '@angular/router';
 import { Observable }								from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
-import { trigger, state, style, animate, transition, animateChild }	from '@angular/animations';
+import { trigger, style, animate, transition }		from '@angular/animations';
 
 import { PostService }								from './post.service';
 import { Post }										from './post';
