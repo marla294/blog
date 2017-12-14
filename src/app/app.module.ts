@@ -5,6 +5,7 @@ import { BrowserAnimationsModule }    from '@angular/platform-browser/animations
 import { HttpClientModule }           from '@angular/common/http';
 import { AppRoutingModule }           from './app-routing.module';
 import { PostModule }                 from './post/post.module';
+import { CoreModule }                 from './core/core.module';
 
 /* Material Module Imports */
 import { MatListModule }              from '@angular/material';
@@ -12,8 +13,6 @@ import { MatListModule }              from '@angular/material';
 /* --- Component Imports --- */
 import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
-import { HeaderComponent }			      from './header.component';
-import { FooterComponent }			      from './footer.component';
 import { PageNotFoundComponent }      from './page-not-found.component';
 
 /* --- Service Imports --- */
@@ -23,8 +22,6 @@ import { PostService }                from './post/post.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
-    FooterComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -33,7 +30,8 @@ import { PostService }                from './post/post.service';
     MatListModule,
     AppRoutingModule,
     HttpClientModule,
-    PostModule
+    PostModule,
+    CoreModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
