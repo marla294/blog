@@ -13,6 +13,7 @@ import { Post }					from './post/post';
 	template: `
 	<mat-list class="post-list container">
 	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post)>
+	  	<img matListAvatar src="./assets/images/ListMarker.png">
 	    <h2 mat-line>{{post.title}}</h2>
 	    <p mat-line><i>{{post.date | date}}</i></p>
 	  </a>
