@@ -11,7 +11,7 @@ import { Post }					from './post/post';
 @Component({
 	selector: 'home',
 	template: `
-	<mat-list class="post-list">
+	<mat-list class="post-list container">
 	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post)>
 	    <h2 mat-line>{{post.title}}</h2>
 	    <p mat-line><i>{{post.date | date}}</i></p>
