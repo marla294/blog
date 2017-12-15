@@ -4,11 +4,3 @@
 	justify-content: space-between;
 	margin: 0 10px;
 }
-.flex-container a {
-	color: #fff;
-	transition: color 0.5s;
-}
-.flex-container a:hover {
-  color: #eee;
-  transition: color 0.5s;
-}

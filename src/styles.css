@@ -5,9 +5,33 @@ html {
 	font-family: 'PT Sans', sans-serif;
 	color: #fff;
 }
+
 a {
 	text-decoration: none;
 	color: #fff;
 	font-family: 'PT Sans', sans-serif;
 	font-size: 20px;
+	transition: color 0.5s;
+}
+
+a:hover {
+	color: #eee;
+	transition: color 0.5s;
+}
+
+.center-container {
+	display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+	align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+h2 { /* Safari adjustment */
+	font-weight: normal;
 }
