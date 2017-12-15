@@ -6,5 +6,5 @@ import { Component }	from '@angular/core';
 	styleUrls: ['./header.component.css']
 })
 export class HeaderComponent { 
-	logo = 'assets/images/color_with_background.png';
+	logo = './assets/images/header.png';
 }
