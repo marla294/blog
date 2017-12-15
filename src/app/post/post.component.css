@@ -1,3 +1,9 @@
-.post {
-	margin-bottom: 100px;
+.post-container { /* mobile */
+	margin: 0 0 100px 0;
+}
+
+@media only screen and (min-width: 800px) { /*desktop*/
+	.post-container {
+		margin: 0 56px 100px 56px;
+	}
 }
