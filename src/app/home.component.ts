@@ -12,10 +12,10 @@ import { Post }					from './post/post';
 	selector: 'home',
 	template: `
 	<mat-list class="post-list container">
-	  <a mat-list-item *ngFor="let post of posts$ | async; let last = last" (click)=goToPost(post)>
-	    <h2 mat-line>{{post.title}}</h2>
-	    <p mat-line><i>{{post.date | date}}</i></p>
-	  </a>
+	  	<mat-list-item *ngFor="let post of posts$ | async">
+	  		<a matLine (click)=goToPost(post)>{{post.title}}</a>
+	  		<p matLine><i>{{post.date | date}}</i></p>
+	  	</mat-list-item>
 	  <div *ngIf="posts$ | async as posts">
 	  	<a mat-list-item *ngIf="posts.length < postsLength" (click)="showMore(posts.length)">Show More...</a>
 	  </div>
