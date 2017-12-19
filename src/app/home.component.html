@@ -1,0 +1,14 @@
+<mat-list class="post-list container">
+	<div *ngFor="let myg of monthYear">
+		<h2>{{myg}}</h2>
+	<div *ngFor="let post of posts$ | async">
+	  	<mat-list-item *ngIf="post.monthYear == myg">
+	  		<a matLine (click)=goToPost(post)>{{post.title}}</a>
+	  		<p matLine><i>{{post.date | date}}</i></p>
+	  	</mat-list-item>
+  	</div>
+  	</div>
+  	<div *ngIf="posts$ | async as posts">
+  		<a mat-list-item *ngIf="posts.length < postsLength" (click)="showMore(posts.length)">Show More...</a>
+  	</div>
+</mat-list>
