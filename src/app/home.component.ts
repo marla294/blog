@@ -19,10 +19,6 @@ export class HomeComponent implements OnInit {
 	postsLength: number;
 	monthYear: string[];
 
-	/* -- Variables for arranging the array of posts on the home page -- */
-	//Variable for sort order
-	sortOrder: string = 'dateAsc'; //What to sort posts by and what order
-
 	//Variables for "show more" functionality
 	defaultPostsPerPage: number = 10; //How many posts to show per page
 	showMoreAmount: number = 10; //The amount of additional posts to show when button clicked
@@ -33,7 +29,7 @@ export class HomeComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.posts$ = this.service.getPostsWithOperators(this.sortOrder, this.defaultPostsPerPage);
+		this.posts$ = this.service.getPostsWithOperators(this.defaultPostsPerPage);
 		this.service.getPosts().subscribe(posts => {
 			this.postsLength = posts.length;
 			this.monthYear = this.getMonthYearGroups(posts);
@@ -45,7 +41,7 @@ export class HomeComponent implements OnInit {
 	}
 
 	showMore(currentLength: number) {
-		this.posts$ = this.service.getPostsWithOperators(this.sortOrder, currentLength + this.showMoreAmount);
+		this.posts$ = this.service.getPostsWithOperators(currentLength + this.showMoreAmount);
 	}
 
 	getMonthYearGroups(posts: Post[]): string[] {
@@ -58,5 +54,5 @@ export class HomeComponent implements OnInit {
 		});
 		return newArr;
 	}
-	
+
 }

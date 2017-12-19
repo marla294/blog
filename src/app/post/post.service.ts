@@ -23,7 +23,8 @@ export class PostService {
 	getPosts(): Observable<Post[]> {
 		return this.http.get<PostJSONResponse>('./assets/data/api/posts.json')
 						.map(res => res.posts
-						.map(post => new Post(post.id, post.title, post.date)));
+						.map(post => new Post(post.id, post.title, post.date))
+						.sort((a, b) => +b.date - +a.date));
 	}
 
 	/* Called by the Post component when looking up current post */
@@ -34,47 +35,16 @@ export class PostService {
 	}
 
 	/* The main "get post" method that is called by the Home component */
-	getPostsWithOperators(sortBy: string, length: number): Observable<Post[]> {
+	getPostsWithOperators(length: number): Observable<Post[]> {
 		let inputArray = this.getPosts();
-		let sortedArray = this.sortPosts(inputArray, sortBy);
-		let trimmedArray = this.trimPosts(sortedArray, length);
+		let trimmedArray = this.trimPosts(inputArray, length);
 		return trimmedArray;
-	}
-
-	/* Sorts posts by specified attribute */
-	sortPosts(obArray: Observable<Post[]>, sortBy: string): Observable<Post[]> {
-		let output: Observable<Post[]>
-		switch(sortBy) {
-			case 'idAsc': // 1->3
-				output = obArray
-						.map(posts => posts
-						.sort((a, b) => +a.id - +b.id));
-				break;
-			case 'idDesc': //3->1
-				output = obArray
-						.map(posts => posts
-						.sort((a, b) => +b.id - +a.id));
-				break;
-			case 'dateAsc': //earlier->later
-				output = obArray
-						.map(posts => posts
-						.sort((a, b) => +a.date - +b.date));
-				break;
-			case 'dateDesc': //later->earlier
-				output = obArray
-						.map(posts => posts
-						.sort((a, b) => +b.date - +a.date));
-				break;
-			default:
-				output = obArray;
-		}
-		return output;
 	}
 
 	/* Trims the length of the Posts array to the specified length */
 	trimPosts(obArray: Observable<Post[]>, length: number): Observable<Post[]> {
 		return obArray.map(posts => posts
-				  .slice(0, length));
+				  		.slice(0, length));
 	}
 }
 
