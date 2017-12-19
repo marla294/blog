@@ -29,8 +29,9 @@ export class HomeComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.posts$ = this.service.getPostsWithOperators(this.defaultPostsPerPage);
-		this.service.getPosts().subscribe(posts => {
+		this.posts$ = this.service.posts;
+		this.service.loadAll();
+		this.posts$.subscribe(posts => {
 			this.postsLength = posts.length;
 			this.monthYear = this.getMonthYearGroups(posts);
 		});
