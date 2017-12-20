@@ -49,3 +49,4 @@ export class PostNavComponent implements OnInit {
 		this.postID = this.postID - 1 < 1 ? 1 : this.postID - 1;
 		this.calcNewOldPostIds();
 	}
+}
