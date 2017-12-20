@@ -23,6 +23,7 @@ import { PostNavComponent }							from './post-nav.component';
 })
 export class PostComponent implements OnInit {
 	post$: Observable<Post>;
+	posts$: Observable<Post[]>;
 	postsLength: number;
 
 	constructor(
@@ -32,10 +33,17 @@ export class PostComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
+		this.posts$ = this.service.posts;
+		this.service.loadAll();
+		this.posts$.subscribe(posts => {
+			this.postsLength = posts.length;
+		});
 		this.post$ = this.route.paramMap
 			.switchMap((params: ParamMap) =>
 				this.service.getPost(params.get('id'))
 			);
+		/*
 		this.service.getPosts().subscribe(posts => this.postsLength = posts.length);
+		*/
 	}
 }

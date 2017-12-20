@@ -49,20 +49,3 @@ export class PostNavComponent implements OnInit {
 		this.postID = this.postID - 1 < 1 ? 1 : this.postID - 1;
 		this.calcNewOldPostIds();
 	}
-
-	/* For debugging
-	consoleLogFn(fn: string) {
-		console.log(`
-			Called from: ${fn}
-			this.newerPostID = ${this.newerPostID},
-			this.olderPostID = ${this.olderPostID},
-			this.PostID = ${this.postID},
-		`);
-	}
-	*/
-}
-
-/* To Do
-- Transition animation
-	- Need to bring in that animation from app component module here
-*/
