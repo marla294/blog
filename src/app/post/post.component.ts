@@ -25,7 +25,7 @@ export class PostComponent implements OnInit {
 	post$: Observable<Post>;
 	posts$: Observable<Post[]>;
 	postsLength: number;
-
+	
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
@@ -33,17 +33,18 @@ export class PostComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
+		/* Get the Observables from the service */
 		this.posts$ = this.service.posts;
-		this.service.loadAll();
+		this.post$ = this.service.currentPost;
+		/* Get the id of the current post and load data */
+		this.route.paramMap
+			.subscribe((params: ParamMap) => {
+				this.service.loadAll(params.get('id'));
+			});
+		/* Subscribe to the posts$ and post$ Observables */
 		this.posts$.subscribe(posts => {
 			this.postsLength = posts.length;
 		});
-		this.post$ = this.route.paramMap
-			.switchMap((params: ParamMap) =>
-				this.service.getPost(params.get('id'))
-			);
-		/*
-		this.service.getPosts().subscribe(posts => this.postsLength = posts.length);
-		*/
+		this.post$.subscribe();
 	}
 }
