@@ -1,7 +1,6 @@
 import { Component, OnInit }	from '@angular/core';
 import { Router }  				from '@angular/router';
 import { Observable }			from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 
 import { PostService }			from './post/post.service';
 import { Post }					from './post/post';
@@ -16,12 +15,7 @@ import { Post }					from './post/post';
 export class HomeComponent implements OnInit {
 	//List of posts to show on the page
 	posts$: Observable<Post[]>;
-	postsLength: number;
 	monthYear: string[];
-
-	//Variables for "show more" functionality
-	defaultPostsPerPage: number = 10; //How many posts to show per page
-	showMoreAmount: number = 10; //The amount of additional posts to show when button clicked
 
 	constructor(
 		private service: PostService,
@@ -32,17 +26,12 @@ export class HomeComponent implements OnInit {
 		this.posts$ = this.service.posts;
 		this.service.loadAll();
 		this.posts$.subscribe(posts => {
-			this.postsLength = posts.length;
 			this.monthYear = this.getMonthYearGroups(posts);
 		});
 	}
 
 	goToPost(post: Post) {
 		this.router.navigate(['/post', post.id]);
-	}
-
-	showMore(currentLength: number) {
-		this.posts$ = this.service.getPostsWithOperators(currentLength + this.showMoreAmount);
 	}
 
 	getMonthYearGroups(posts: Post[]): string[] {

@@ -1,8 +1,7 @@
 import { Injectable }		from '@angular/core';
 import { HttpClient }		from '@angular/common/http';
-import { Observable }		from 'rxjs/Observable';
+/*import { Observable }		from 'rxjs/Observable';*/
 import { BehaviorSubject }	from 'rxjs/BehaviorSubject';
-//import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
 import { Post }				from './post';
@@ -18,7 +17,6 @@ interface PostJSONResponse {
 /* Please only return Observables from functions in this class */
 @Injectable()
 export class PostService {
-	/* New way */
 	private _posts: BehaviorSubject<Post[]>;
 	private _currentPost: BehaviorSubject<Post>;
 	private dataStore: { 
@@ -44,7 +42,7 @@ export class PostService {
 	}
 
 	/* Loads all data into Observables for public use, and into memory */
-	loadAll(id: string = '0') {
+	loadAll(id: string = '0') { // Default id of 0, will find no post
 		this.http.get<PostJSONResponse>('./assets/data/api/posts.json')
 						.map(res => res.posts
 						.map(post => new Post(post.id, post.title, post.date))
@@ -57,27 +55,6 @@ export class PostService {
 						});
 	}
 
-	/* Old stuff */
-	/* getPosts function to grab the JSON - everything else works off this */
-	getPosts(): Observable<Post[]> {
-		return this.http.get<PostJSONResponse>('./assets/data/api/posts.json')
-						.map(res => res.posts
-						.map(post => new Post(post.id, post.title, post.date))
-						.sort((a, b) => +b.date - +a.date));
-	}
-
-	/* The main "get post" method that is called by the Home component */
-	getPostsWithOperators(length: number): Observable<Post[]> {
-		let inputArray = this.getPosts();
-		let trimmedArray = this.trimPosts(inputArray, length);
-		return trimmedArray;
-	}
-
-	/* Trims the length of the Posts array to the specified length */
-	trimPosts(obArray: Observable<Post[]>, length: number): Observable<Post[]> {
-		return obArray.map(posts => posts
-				  		.slice(0, length));
-	}
 }
 
 
