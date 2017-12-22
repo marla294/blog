@@ -1,11 +1,13 @@
 <mat-list class="post-list container">
-	<div *ngFor="let MY of monthYear">
-		<h2>{{MY}}</h2>
-	<div *ngFor="let post of posts$ | async">
-	  	<mat-list-item *ngIf="post.monthYear == MY">
-	  		<a matLine (click)=goToPost(post)>{{post.title}}</a>
-	  		<p matLine><i>{{post.date | date}}</i></p>
-	  	</mat-list-item>
-  	</div>
+	<div class="monthYearGroup" *ngFor="let MY of monthYear">
+		<h2>{{MY | uppercase}}</h2>
+		<div *ngFor="let post of posts$ | async">
+		  	<mat-list-item *ngIf="post.monthYear == MY">
+		  		<div matListAvatar class="avatar center-container">
+		  			<p class="date">{{post.date | date:'dd'}}</p>
+		  		</div>
+		  		<a matLine class="post-title" (click)=goToPost(post)>{{post.title}}</a>
+		  	</mat-list-item>
+	  	</div>
   	</div>
 </mat-list>

@@ -13,7 +13,6 @@ import { Post }					from './post/post';
 	styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-	//List of posts to show on the page
 	posts$: Observable<Post[]>;
 	monthYear: string[];
 

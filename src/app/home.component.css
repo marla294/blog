@@ -10,3 +10,12 @@
   color: #eee;
   transition: color 0.5s;
 }
+
+.post-list .avatar .date {
+	margin: 0;
+	font-size: 35px;
+}
+
+.post-list .post-title {
+	font-style: italic;
+}
