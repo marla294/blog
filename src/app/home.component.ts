@@ -5,8 +5,6 @@ import { Observable }			from 'rxjs/Observable';
 import { PostService }			from './post/post.service';
 import { Post }					from './post/post';
 
-
-
 @Component({
 	selector: 'home',
 	templateUrl: './home.component.html',
@@ -33,6 +31,7 @@ export class HomeComponent implements OnInit {
 		this.router.navigate(['/post', post.id]);
 	}
 
+	/* Moving to MonthYear Service so I can share with other components */
 	getMonthYearGroups(posts: Post[]): string[] {
 		let newPosts = posts.map(post => post.monthYear);
 		let newArr: string[] = [];
@@ -42,6 +41,12 @@ export class HomeComponent implements OnInit {
 			}
 		});
 		return newArr;
+	}
+
+	/* Moving to MonthYear Service so I can share with other components */
+	filter2MonthYear(monthYear: string) {
+		console.log(monthYear);
+		this.monthYear = [monthYear];
 	}
 
 }

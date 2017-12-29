@@ -17,6 +17,7 @@ import { PageNotFoundComponent }      from './page-not-found.component';
 
 /* --- Service Imports --- */
 import { PostService }                from './post/post.service';
+import { MonthYearService }           from './post/month-year.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,10 @@ import { PostService }                from './post/post.service';
     PostModule,
     CoreModule
   ],
-  providers: [PostService],
+  providers: [
+    PostService,
+    MonthYearService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

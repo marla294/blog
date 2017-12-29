@@ -1,6 +1,5 @@
 import { Injectable }		from '@angular/core';
 import { HttpClient }		from '@angular/common/http';
-/*import { Observable }		from 'rxjs/Observable';*/
 import { BehaviorSubject }	from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/map';
 
@@ -14,7 +13,6 @@ interface PostJSONResponse {
 	posts: PostJSON[];
 }
 
-/* Please only return Observables from functions in this class */
 @Injectable()
 export class PostService {
 	private _posts: BehaviorSubject<Post[]>;

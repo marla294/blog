@@ -1,6 +1,6 @@
 <mat-list class="post-list container">
 	<div class="monthYearGroup" *ngFor="let MY of monthYear">
-		<h2>{{MY | uppercase}}</h2>
+		<a (click)="filter2MonthYear(MY)"><h2>{{MY | uppercase}}</h2></a>
 		<div *ngFor="let post of posts$ | async">
 		  	<mat-list-item *ngIf="post.monthYear == MY">
 		  		<div matListAvatar class="avatar center-container">
