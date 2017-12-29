@@ -13,7 +13,7 @@ Only located on the main app component HTML
 	styleUrls: ['./header.component.css']
 })
 export class HeaderComponent { 
-	private logo = './assets/images/header.png';
+	logo = './assets/images/header.png';
 
 	constructor(
 		private service: PostService,

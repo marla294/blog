@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
 	constructor(
 		private service: PostService,
-		private myService: MonthYearService,
+		public myService: MonthYearService,
 		private router: Router
 	) {}
 
