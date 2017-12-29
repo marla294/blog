@@ -17,7 +17,7 @@ import { PageNotFoundComponent }      from './page-not-found.component';
 
 /* --- Service Imports --- */
 import { PostService }                from './post/post.service';
-import { MonthYearService }           from './post/month-year.service';
+import { MonthYearService }           from './shared/month-year.service';
 
 @NgModule({
   declarations: [

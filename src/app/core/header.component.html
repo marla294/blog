@@ -1,3 +1,7 @@
 <div class="center-container">
-	<a mat-list-item routerLink="/home" routerLinkActive="active"><img [src]="logo" class="logo"></a>
+	<a mat-list-item 
+	routerLink="/home" routerLinkActive="active"
+	(click)="headerClick()">
+		<img [src]="logo" class="logo">
+	</a>
 </div>
