@@ -34,7 +34,6 @@ export class MonthYearService {
 	Filters MonthYear array down to 1 selected month
 	*/
 	filter2MonthYear(monthYear: string) {
-		console.log(monthYear);
 		this._monthYear = [monthYear];
 	}
 }

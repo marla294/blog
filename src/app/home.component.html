@@ -1,13 +1,15 @@
 <mat-list class="post-list container">
-	<div class="monthYearGroup" *ngFor="let MY of this.myService.monthYear">
-		<a (click)="this.myService.filter2MonthYear(MY)"><h2>{{MY | uppercase}}</h2></a>
-		<div *ngFor="let post of posts$ | async">
-		  	<mat-list-item *ngIf="post.monthYear == MY">
-		  		<div matListAvatar class="avatar center-container">
-		  			<p class="date">{{post.date | date:'dd'}}</p>
-		  		</div>
-		  		<a matLine class="post-title" (click)=goToPost(post)>{{post.title}}</a>
-		  	</mat-list-item>
+	<div [@monthYearChangeAnimation]="this.myService.monthYear">
+		<div class="monthYearGroup" *ngFor="let MY of this.myService.monthYear">
+			<a (click)="this.myService.filter2MonthYear(MY)"><h2>{{MY | uppercase}}</h2></a>
+			<div *ngFor="let post of posts$ | async">
+			  	<mat-list-item *ngIf="post.monthYear == MY">
+			  		<div matListAvatar class="avatar center-container">
+			  			<p class="date">{{post.date | date:'dd'}}</p>
+			  		</div>
+			  		<a matLine class="post-title" (click)=goToPost(post)>{{post.title}}</a>
+			  	</mat-list-item>
+		  	</div>
 	  	</div>
   	</div>
 </mat-list>
