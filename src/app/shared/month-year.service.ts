@@ -9,9 +9,14 @@ Currently used in Home and Header components
 @Injectable()
 export class MonthYearService {
 	private _monthYear: string[];
+	private _showAll: Boolean = false;
 
 	get monthYear() {
 		return this._monthYear;
+	}
+
+	get showAll() {
+		return this._showAll;
 	}
 
 	/*
@@ -27,6 +32,7 @@ export class MonthYearService {
 			}
 		});
 		this._monthYear = newArr;
+		this._showAll = false;
 	}
 
 	/*
@@ -35,5 +41,6 @@ export class MonthYearService {
 	*/
 	filter2MonthYear(monthYear: string) {
 		this._monthYear = [monthYear];
+		this._showAll = true;
 	}
 }

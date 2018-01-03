@@ -39,4 +39,10 @@ export class HomeComponent implements OnInit {
 	goToPost(post: Post) {
 		this.router.navigate(['/post', post.id]);
 	}
+
+	showAllClick() {
+		this.posts$.subscribe(posts => {
+			this.myService.getMonthYearGroups(posts);
+		});
+	}
 }

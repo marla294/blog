@@ -12,6 +12,10 @@
 			  		<a matLine class="post-title" (click)=goToPost(post)>{{post.title}}</a>
 			  	</mat-list-item>
 		  	</div>
+		  	<br>
+		  	<a *ngIf="this.myService.showAll == true" (click)="this.showAllClick()">
+		  		Show All Posts
+		  	</a>
 	  	</div>
   	</div>
 </mat-list>
