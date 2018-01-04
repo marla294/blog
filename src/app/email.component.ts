@@ -15,8 +15,12 @@ export class EmailComponent {
 	createForm() {
 		this.emailForm = this.fb.group({
 			senderName: ['', Validators.required],
-			senderEmail: ['', Validators.required],
-			messageBody: ['']
+			senderEmail: ['', Validators.email],
+			messageBody: ['', Validators.minLength(1)]
 		})
+	}
+
+	onSubmit() {
+		console.log('Submitted');
 	}
 }

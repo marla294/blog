@@ -1,6 +1,6 @@
 <div class="container">
 	<h1>Email me!</h1>
-	<form [formGroup]="emailForm" novalidate>
+	<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" novalidate>
 		<label>Your name:&nbsp;
 			<input formControlName="senderName">
 		</label><br><br>
@@ -10,7 +10,7 @@
 		<label>Message:&nbsp;
 			<textarea formControlName="messageBody" style="height: 100px; width: 200px"></textarea>
 		</label><br><br>
-		<button type="submit">Send</button><br>
+		<button type="submit" [disabled]="emailForm.status != 'VALID'">Send</button><br>
 		<p [hidden]="emailForm.status == 'VALID' || emailForm.pristine">Warning Message</p>
 	</form>
 	<p>Form value: {{emailForm.value | json}}</p>
