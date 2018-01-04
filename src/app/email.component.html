@@ -1,15 +1,15 @@
 <div class="container">
 	<h1>Email me!</h1>
 	<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" novalidate>
-		<label>Your name:&nbsp;
-			<input formControlName="senderName">
-		</label><br><br>
-		<label>Your email:&nbsp;
-			<input formControlName="senderEmail">
-		</label><br><br>
-		<label>Message:&nbsp;
-			<textarea formControlName="messageBody" style="height: 100px; width: 200px"></textarea>
-		</label><br><br>
+		<mat-form-field>
+			<input matInput formControlName="senderName" placeholder="Your Name" value="">
+		</mat-form-field><br>
+		<mat-form-field>
+			<input matInput formControlName="senderEmail" placeholder="Your Email" value="">
+		</mat-form-field><br>
+		<mat-form-field>
+			<textarea matInput formControlName="messageBody" placeholder="Message" value="" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5"></textarea>
+		</mat-form-field><br>
 		<button type="submit" [disabled]="emailForm.status != 'VALID'">Send</button><br>
 		<p [hidden]="emailForm.status == 'VALID' || emailForm.pristine">Warning Message</p>
 	</form>
