@@ -14,6 +14,7 @@ import { MatListModule }              from '@angular/material';
 import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
 import { PageNotFoundComponent }      from './page-not-found.component';
+import { EmailComponent }             from './email.component';
 
 /* --- Service Imports --- */
 import { PostService }                from './post/post.service';
@@ -23,7 +24,8 @@ import { MonthYearService }           from './shared/month-year.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,
