@@ -1,7 +1,22 @@
-import { Component }		from '@angular/core';
+import { Component }								from '@angular/core';
+import { FormBuilder, FormGroup, Validators }		from '@angular/forms';
 
 @Component({
 	selector: 'email',
-	template: '<h1>Email Component</h1>'
+	templateUrl: './email.component.html'
 })
-export class EmailComponent {}
+export class EmailComponent {
+	emailForm: FormGroup;
+
+	constructor(private fb: FormBuilder) {
+		this.createForm();
+	}
+
+	createForm() {
+		this.emailForm = this.fb.group({
+			senderName: ['', Validators.required],
+			senderEmail: ['', Validators.required],
+			messageBody: ['']
+		})
+	}
+}

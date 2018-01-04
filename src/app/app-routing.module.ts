@@ -4,7 +4,7 @@ import { RouterModule, Routes }       from '@angular/router';
 import { HomeComponent }              from './home.component';
 import { PostComponent }              from './post/post.component';
 import { PageNotFoundComponent }	  from './page-not-found.component';
-import { EmailComponent }              from './email.component';
+import { EmailComponent }             from './email.component';
 
 const appRoutes: Routes = [
   { path: 'home', 		component: HomeComponent, data: { state: 'home'} },

@@ -1,0 +1,19 @@
+<div class="container">
+	<h1>Email me!</h1>
+	<form [formGroup]="emailForm" novalidate>
+		<label>Your name:&nbsp;
+			<input formControlName="senderName">
+		</label><br><br>
+		<label>Your email:&nbsp;
+			<input formControlName="senderEmail">
+		</label><br><br>
+		<label>Message:&nbsp;
+			<textarea formControlName="messageBody" style="height: 100px; width: 200px"></textarea>
+		</label><br><br>
+		<button type="submit">Send</button><br>
+		<p [hidden]="emailForm.status == 'VALID' || emailForm.pristine">Warning Message</p>
+	</form>
+	<p>Form value: {{emailForm.value | json}}</p>
+	<p>Form status: {{emailForm.status | json}}</p>
+	<p>Form pristine: {{emailForm.pristine | json}}</p>
+</div>

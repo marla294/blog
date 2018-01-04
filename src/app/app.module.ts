@@ -3,6 +3,7 @@ import { BrowserModule } 			        from '@angular/platform-browser';
 import { NgModule } 				          from '@angular/core';
 import { BrowserAnimationsModule }    from '@angular/platform-browser/animations'
 import { HttpClientModule }           from '@angular/common/http';
+import { ReactiveFormsModule }        from '@angular/forms';
 import { AppRoutingModule }           from './app-routing.module';
 import { PostModule }                 from './post/post.module';
 import { CoreModule }                 from './core/core.module';
@@ -33,6 +34,7 @@ import { MonthYearService }           from './shared/month-year.service';
     MatListModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     PostModule,
     CoreModule
   ],
