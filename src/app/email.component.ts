@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators }		from '@angular/forms';
 
 @Component({
 	selector: 'email',
-	templateUrl: './email.component.html'
+	templateUrl: './email.component.html',
+	styleUrls: ['./email.component.css']
 })
 export class EmailComponent {
 	emailForm: FormGroup;

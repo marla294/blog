@@ -46,6 +46,5 @@ export class PostComponent implements OnInit {
 		this.posts$.subscribe(posts => {
 			this.postsLength = posts.length;
 		});
-		this.post$.subscribe();
 	}
 }

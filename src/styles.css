@@ -1,4 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');*/
 
 html {
 	background-color: #85E0E0;
@@ -44,12 +45,12 @@ h2 { /* Safari adjustment */
 	font-size: 20px;
 }
 
-.container { /* mobile */
+.my-container { /* mobile */
 	margin: 0 0 100px 0;
 }
 
 @media only screen and (min-width: 800px) { /*desktop*/
-	.container {
+	.my-container {
 		margin: 0 56px 100px 56px;
 	}
 }
