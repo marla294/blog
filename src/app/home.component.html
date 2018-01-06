@@ -1,4 +1,4 @@
-<mat-list class="post-list my-container">
+<mat-list class="post-list container">
 	<div [@monthYearChangeAnimation]="this.myService.monthYear">
 		<div class="monthYearGroup" *ngFor="let MY of this.myService.monthYear">
 			<a (click)="this.myService.filter2MonthYear(MY)">
