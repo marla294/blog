@@ -1,21 +1,48 @@
-.post-list a {
-  color: #fff;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 20px;
-  cursor: pointer;
-  transition: color 0.5s;
-}
+/*everywhere*/
 
 .post-list a:hover {
   color: #eee;
   transition: color 0.5s;
 }
 
-.post-list .avatar .date {
-	margin: 0;
-	font-size: 35px;
+.post-list .post-title {
+  font-style: italic;
 }
 
-.post-list .post-title {
-	font-style: italic;
+/*mobile*/
+
+.post-list a {
+  color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.post-list .avatar .date { 
+	margin: 0;
+	font-size: 20px;
+}
+
+.monthYearGroup h2 {
+  font-size: 15px;
+}
+
+/*desktop*/
+
+@media only screen and (min-width: 800px) { 
+  .post-list a {
+    color: #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.5s;
+  }
+  .post-list .avatar .date {
+    margin: 0;
+    font-size: 35px;
+  }
+  .monthYearGroup h2 {
+    font-size: 20px;
+  }
 }
