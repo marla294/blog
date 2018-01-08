@@ -10,7 +10,6 @@ import { CoreModule }                 from './core/core.module';
 
 /* Material Module Imports */
 import { MatListModule }              from '@angular/material';
-import { MatInputModule }             from '@angular/material/input';
 
 /* --- Component Imports --- */
 import { AppComponent } 			        from './app.component';
@@ -33,7 +32,6 @@ import { MonthYearService }           from './shared/month-year.service';
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatInputModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

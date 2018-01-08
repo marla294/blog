@@ -1,7 +1,41 @@
 <div class="container">
 	<h1>Email me!</h1>
 	<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" novalidate>
-		<mat-form-field>
+		<div class="form-group row">
+			<label for="senderName" class="col-sm-1 col-form-label">
+				Name:&nbsp;
+			</label>
+			<div class="col-sm-5">
+				<input type="Name" class="form-control" id="senderName" placeholder="Joe Shmoe" formControlName="senderName" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="senderEmail" class="col-sm-1 col-form-label">
+				Email:&nbsp;
+			</label>
+			<div class="col-sm-5">
+				<input type="Email" class="form-control" id="senderEmail" placeholder="joe.schmoe@gmail.com" formControlName="senderEmail" value="">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="messageBody" class="col-sm-1 col-form-label">
+				Message:&nbsp;
+			</label>
+			<div class="col-sm-9">
+				<textarea type="textarea" class="form-control" id="messageBody" placeholder="Your message to Marla..." formControlName="messageBody" value="" rows="5"></textarea>
+			</div>
+		</div>
+		<div class="form-group row">
+		</div>
+	</form>
+	<p>Form value: {{emailForm.value | json}}</p>
+	<p>Form status: {{emailForm.status | json}}</p>
+	<p>Form pristine: {{emailForm.pristine | json}}</p>
+</div>
+
+<!--
+
+	<mat-form-field>
 			<input matInput formControlName="senderName" placeholder="Your Name" value="">
 		</mat-form-field><br>
 		<mat-form-field>
@@ -12,8 +46,4 @@
 		</mat-form-field><br>
 		<button type="submit" [disabled]="emailForm.status != 'VALID'">Send</button><br>
 		<p [hidden]="emailForm.status == 'VALID' || emailForm.pristine">Warning Message</p>
-	</form>
-	<p>Form value: {{emailForm.value | json}}</p>
-	<p>Form status: {{emailForm.status | json}}</p>
-	<p>Form pristine: {{emailForm.pristine | json}}</p>
-</div>
+!-->
