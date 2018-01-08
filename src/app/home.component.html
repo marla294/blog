@@ -6,12 +6,15 @@
 			</a>
 			<div *ngFor="let post of posts$ | async">
 				<div class="list-group" *ngIf="post.monthYear == MY">
-					<a class="list-group-item" (click)=goToPost(post)>
-						<!--<div class="avatar float-left">{{post.date | date:'dd'}}</div>!-->
-						<div class="post-title">{{post.title}}</div>
+					<a class="list-group-item row" (click)=goToPost(post)>
+						<div class="avatar float-left">{{post.date | date:'dd'}}</div>
+						<div class="post-title align-middle">{{post.title}}</div>
 					</a>
 				</div>
 			</div>
+			<a *ngIf="this.myService.showAll == true" (click)="this.showAllClick()">
+		  		Show All Posts
+		  	</a>
 		</div>
 	</li>
 </ul>
