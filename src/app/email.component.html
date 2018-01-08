@@ -1,42 +1,28 @@
 <div class="container">
-	<h1>Email me!</h1>
+	<h1>Send me an email</h1><br>
 	<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" novalidate>
 		<div class="form-group">
 			<label for="senderName">
-				Name:
+				<h2>Name:</h2>
 			</label>
 			<input type="Name" class="form-control" id="senderName" placeholder="Jane Doe" formControlName="senderName" value="">
 		</div>
 		<div class="form-group">
 			<label for="senderEmail">
-				Email:
+				<h2>Email:</h2>
 			</label>
 			<input type="Email" class="form-control" id="senderEmail" placeholder="jane.doe@gmail.com" formControlName="senderEmail" value="">
 		</div>
 		<div class="form-group">
 			<label for="messageBody">
-				Message:
+				<h2>Message:</h2>
 			</label>
 			<textarea type="textarea" class="form-control" id="messageBody" placeholder="Your message to Marla..." formControlName="messageBody" value="" rows="7"></textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form><br>
+		<button type="submit" class="btn btn-secondary">Submit</button>
+		<button type="reset" class="btn btn-danger">Cancel</button>
+	</form><br><br>
 	<p>Form value: {{emailForm.value | json}}</p>
 	<p>Form status: {{emailForm.status | json}}</p>
 	<p>Form pristine: {{emailForm.pristine | json}}</p>
 </div>
-
-<!--
-
-	<mat-form-field>
-			<input matInput formControlName="senderName" placeholder="Your Name" value="">
-		</mat-form-field><br>
-		<mat-form-field>
-			<input matInput formControlName="senderEmail" placeholder="Your Email" value="">
-		</mat-form-field><br>
-		<mat-form-field>
-			<textarea matInput formControlName="messageBody" placeholder="Message" value="" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5"></textarea>
-		</mat-form-field><br>
-		<button type="submit" [disabled]="emailForm.status != 'VALID'">Send</button><br>
-		<p [hidden]="emailForm.status == 'VALID' || emailForm.pristine">Warning Message</p>
-!-->
