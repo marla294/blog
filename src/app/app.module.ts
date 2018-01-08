@@ -8,9 +8,6 @@ import { AppRoutingModule }           from './app-routing.module';
 import { PostModule }                 from './post/post.module';
 import { CoreModule }                 from './core/core.module';
 
-/* Material Module Imports */
-import { MatListModule }              from '@angular/material';
-
 /* --- Component Imports --- */
 import { AppComponent } 			        from './app.component';
 import { HomeComponent }              from './home.component';
@@ -31,7 +28,6 @@ import { MonthYearService }           from './shared/month-year.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatListModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
