@@ -6,8 +6,9 @@
 			</a>
 			<div *ngFor="let post of posts$ | async">
 				<div class="list-group" *ngIf="post.monthYear == MY">
-					<a class="list-group-item post-title" (click)=goToPost(post)>
-						{{post.title}}
+					<a class="list-group-item" (click)=goToPost(post)>
+						<!--<div class="avatar float-left">{{post.date | date:'dd'}}</div>!-->
+						<div class="post-title">{{post.title}}</div>
 					</a>
 				</div>
 			</div>

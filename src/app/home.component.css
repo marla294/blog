@@ -18,7 +18,7 @@
   border: none;
 }
 
-.post-list .avatar .date { 
+.post-list .avatar div { 
 	margin: 0;
 	font-size: 35px;
 }
