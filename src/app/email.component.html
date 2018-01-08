@@ -1,33 +1,26 @@
 <div class="container">
 	<h1>Email me!</h1>
 	<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" novalidate>
-		<div class="form-group row">
-			<label for="senderName" class="col-sm-1 col-form-label">
-				Name:&nbsp;
+		<div class="form-group">
+			<label for="senderName">
+				Name:
 			</label>
-			<div class="col-sm-5">
-				<input type="Name" class="form-control" id="senderName" placeholder="Joe Shmoe" formControlName="senderName" value="">
-			</div>
+			<input type="Name" class="form-control" id="senderName" placeholder="Jane Doe" formControlName="senderName" value="">
 		</div>
-		<div class="form-group row">
-			<label for="senderEmail" class="col-sm-1 col-form-label">
-				Email:&nbsp;
+		<div class="form-group">
+			<label for="senderEmail">
+				Email:
 			</label>
-			<div class="col-sm-5">
-				<input type="Email" class="form-control" id="senderEmail" placeholder="joe.schmoe@gmail.com" formControlName="senderEmail" value="">
-			</div>
+			<input type="Email" class="form-control" id="senderEmail" placeholder="jane.doe@gmail.com" formControlName="senderEmail" value="">
 		</div>
-		<div class="form-group row">
-			<label for="messageBody" class="col-sm-1 col-form-label">
-				Message:&nbsp;
+		<div class="form-group">
+			<label for="messageBody">
+				Message:
 			</label>
-			<div class="col-sm-9">
-				<textarea type="textarea" class="form-control" id="messageBody" placeholder="Your message to Marla..." formControlName="messageBody" value="" rows="5"></textarea>
-			</div>
+			<textarea type="textarea" class="form-control" id="messageBody" placeholder="Your message to Marla..." formControlName="messageBody" value="" rows="7"></textarea>
 		</div>
-		<div class="form-group row">
-		</div>
-	</form>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form><br>
 	<p>Form value: {{emailForm.value | json}}</p>
 	<p>Form status: {{emailForm.status | json}}</p>
 	<p>Form pristine: {{emailForm.pristine | json}}</p>
