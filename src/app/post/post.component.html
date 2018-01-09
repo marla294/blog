@@ -3,8 +3,8 @@
 <post-nav [postIDInput]="post.id" [numOfPosts]="postsLength"></post-nav>
 
 <div [@postChangeAnimation]="post.id">
-	
-<h2><i>{{post.date | date}}</i> - {{post.title}}</h2>
+
+<h2 class="font-weight-bold mb-4"><i>{{post.date | date}}</i> - {{post.title}}</h2>
 
 <div [ngSwitch]="post.id">
 
@@ -36,7 +36,7 @@
 
 		Here are references for mentioned sources (and some others that are just plain useful):
 			<ul>
-				<li><a href="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8"><i>Design Patterns: Elements of Reusable Object-Oriented Software</i> book (aka Gang of Four)</a></li>
+				<li><a href="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8"><i>Design Patterns: Elements of Reusable Object-Oriented Software</i></a> book (aka Gang of Four)</li>
 				<li><a href="http://reactivex.io/intro.html">ReactiveX Intro</a></li>
 				<li><a href="https://vimeo.com/144625829">Rob Wormald's talk about Observables</a></li>
 				<li><a href="https://coryrylan.com/blog/angular-observable-data-services">Cory Rylan blog post on how to implement Observables</a> (which we'll talk more about next time)</li>
