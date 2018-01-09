@@ -52,12 +52,6 @@ h2 { /* Safari adjustment */
 	font-size: 20px;
 }
 
-.container { /* mobile */
+.container {
 	margin-bottom: 100px;
-}
-
-@media only screen and (min-width: 800px) { /*desktop*/
-	.container {
-		margin-bottom: 100px;
-	}
 }

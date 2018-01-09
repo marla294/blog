@@ -2,16 +2,7 @@ import { Component, Input, OnInit }	from '@angular/core';
 
 @Component({
 	selector: 'post-nav',
-	template: `
-			<div class="flex-container">
-				<div>
-					<a class="older" routerLink="/post/{{olderPostID}}" routerLinkActive="active" (click)="onOlder()" *ngIf="postID != 1">< Older</a>
-				</div>
-				<div>
-					<a class="newer" routerLink="/post/{{newerPostID}}" routerLinkActive="active" (click)="onNewer()" *ngIf="postID != numOfPosts">Newer ></a>
-				</div>
-			</div>
-	`,
+	templateUrl: './post-nav.component.html',
 	styleUrls: ['./post-nav.component.css']
 })
 export class PostNavComponent implements OnInit {
