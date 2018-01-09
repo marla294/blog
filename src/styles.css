@@ -1,5 +1,5 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-/*@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');*/
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');*/
 
 html {
 	background-color: #85E0E0;
@@ -35,6 +35,18 @@ a:hover {
 	transition: color 0.5s;
 }
 
+
+
+h2 { /* Safari adjustment */
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.container {
+	margin-bottom: 100px;
+}
+
+/* Bootstrap makes these unnecessary now!
 .center-container {
 	display: -webkit-flexbox;
     display: -ms-flexbox;
@@ -46,12 +58,4 @@ a:hover {
 	align-items: center;
     justify-content: center;
 }
-
-h2 { /* Safari adjustment */
-	font-weight: normal;
-	font-size: 20px;
-}
-
-.container {
-	margin-bottom: 100px;
-}
+*/
