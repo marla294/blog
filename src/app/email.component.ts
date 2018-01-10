@@ -1,5 +1,6 @@
 import { Component }								from '@angular/core';
 import { FormBuilder, FormGroup, Validators }		from '@angular/forms';
+import { HttpClient, HttpResponse }					from '@angular/common/http';
 
 @Component({
 	selector: 'email',
@@ -8,9 +9,14 @@ import { FormBuilder, FormGroup, Validators }		from '@angular/forms';
 })
 export class EmailComponent {
 	emailForm: FormGroup;
+	data: any;
 
-	constructor(private fb: FormBuilder) {
+	constructor(private fb: FormBuilder, private http: HttpClient) {
 		this.createForm();
+	}
+
+	ngOnInit() {
+		this.onDataLoad();
 	}
 
 	createForm() {
@@ -23,5 +29,11 @@ export class EmailComponent {
 
 	onSubmit() {
 		console.log('Submitted');
+	}
+
+	onDataLoad() {
+		this.http.get('./assets/data/api/test.php')
+				.subscribe(res => this.data = res);
+		console.log(this.data);
 	}
 }
