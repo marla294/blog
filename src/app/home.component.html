@@ -1,13 +1,13 @@
 <ul class="list-group post-list container">
 	<li class="list-group-item" [@monthYearChangeAnimation]="this.myService.monthYear">
-		<div class="monthYearGroup" *ngFor="let MY of this.myService.monthYear">
+		<div class="monthYearGroup pb-3" *ngFor="let MY of this.myService.monthYear">
 			<a (click)="this.myService.filter2MonthYear(MY)">
 				<h2>{{MY | uppercase}}</h2>
 			</a>
 			<div *ngFor="let post of posts$ | async">
 				<div class="list-group" *ngIf="post.monthYear == MY">
-					<a class="list-group-item row" (click)=goToPost(post)>
-						<div class="avatar float-left">{{post.date | date:'dd'}}</div>
+					<a class="list-group-item row p-1" (click)=goToPost(post)>
+						<div class="avatar float-left align-middle">{{post.date | date:'dd'}}</div>
 						<div class="post-title align-middle">{{post.title}}</div>
 					</a>
 				</div>
