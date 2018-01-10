@@ -9,6 +9,11 @@
 			"id": "2",
 			"title": "Why Use RxJS Observables in Angular (2+)?",
 			"date": "1/3/2018"
+		},
+		{
+			"id": "3",
+			"title": "Comparing CSS Frameworks - Angular Material and Bootstrap",
+			"date": "1/10/2018"
 		}
 	]
 }
