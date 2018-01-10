@@ -48,7 +48,7 @@
 
 	<div *ngSwitchCase="3">
 
-		<p>If you read my last post about Observables, you'll note that this post is not about Observables like I promised.  But the idea of this post about CSS frameworks felt so good to me today and I really wanted to write it.  So, you'll just have to sit tight for that Observables post for now.  I promise to avoid promising things in blog posts from now on :)</p>
+		<p>If you read my last post about Observables, you'll note that this post is not about Observables like I promised.  But the idea of this post about CSS frameworks felt so good to me today and I really wanted to write it.  So, you'll just have to sit tight for that Observables post for now.</p>
 
 		<p>I've explored 2 different CSS frameworks in the past couple months to use with the development of this website: Angular Material and Bootstrap.  I want to talk through my experience with each, and why/when you might want to use each one.</p>
 
@@ -58,17 +58,17 @@
 
 		<p>I thought that since I was developing in Angular, Angular Material would be a good CSS framework to compliment that.  The idea of making the web easier to use by using visual cues was appealing as well.  Ease of use and accessibility are kind of my thing.</p>
 
-		<p>I was right about the "looking cool" part.  Buttons have a fancy ripple effect.  When you enter text in a textbox, there's a little line that underlines it.  Their little "tags" that you can use for things like categories are fun.  Their components are really cool-looking overall.</p>
+		<p>Material certainly looks cool.  Buttons have a fancy ripple effect.  When you enter text in a textbox, there's a multi-colored line that underlines it.  Their little "tags" that you can use for things like categories are fun.  Their components are really neat-looking overall.</p>
 
 		<p>Also, it was fairly easy to install.  Since it's part of the Angular universe, and I am using Angular for my project, I could pick and choose what elements I wanted to import and bring them in on the app module, instead of having to bring in the whole thing (ala Bootstrap).</p>
 
-		<p>But, there are some pretty hefty drawbacks to Angular Material, and that is why I'm not using it on this site.  It's not easy to change the theming on the elements.  They make you pick a theme, and if you don't like the colors or you need more padding on something, you might need to do a ton of CSS writing to change it, or just accept that you're stuck with it.  I suppose the reason is because of all those cool effects... if you were able to easily change to some colors, those effects might break.</p>
+		<p>But, there are some pretty hefty drawbacks to using Angular Material as your one and only CSS framework.  It's not easy to change the theming on the elements.  They make you pick a theme, and if you don't like the colors or you need more padding on something, you might need to do a ton of CSS writing to change it, or just accept that you're stuck with it.  I suppose the reason is because of all those cool effects... if you were able to easily change to some colors, those effects might break.</p>
 
-		<p>Another drawback is that there aren't a ton of components or utilities to use.  For example, they don't have a "container" class that you could just put on a div... the closest they've got is a card element.  Ain't nobody want to put all their webpages on giant cards!</p>
+		<p>Another drawback is that there aren't a ton of components or utilities to use.  For example, they don't have a "container" class that you could just put on a div... the closest they've got is a card element.  I don't know about you, but I didn't fancy putting my website pages onto giant cards!  I just wanted to spruce up the pages that I've got.</p>
 
-		<p>Finally, for the above mentioned reasons, when you design stuff using Angular Material, it looks like you are associated with Google in some way.  That might legitimately be good if you have a "sign in with Google" function in your appication, or if you really are associated with Google.  But, if you're me, a Google-fangirl who is not affiliated (but, hey Google... I sure wouldn't MIND having a job with you... call me!) then it looks kinda weird.</p>
+		<p>Finally, for the above mentioned reasons, when you design stuff using Angular Material, it looks like you are associated with Google in some way.  That might legitimately be good if you have a "sign in with Google" function in your appication, or if you really are associated with Google.  But, if you're me, a Google-fangirl who is not affiliated, then it looks kinda weird.</p>
 
-		<p>Maybe I misunderstood what Material's intended purpose is.  It does say right in their docs that they are a "component framework", not a "CSS framework".  I don't think they are going for being an all-inclusive CSS framework... I think they just wanted to provide some components that you can select from to use in your website, a la carte style.  In that respect, I'd say their components are good and nice to use in that way.  But for a thing like a blog, I needed something more.</p>
+		<p>Maybe I misunderstood what Material's intended purpose is.  It does say right in their docs that they are a "component framework", not a "CSS framework".  I can see now that I don't think they are going for being an all-inclusive CSS framework... I think they just wanted to provide some components that you can select from to use in your website, a la carte style.  In that respect, I'd say their components are good and nice to use in that way.  But for a thing like the styling of a website, I needed something more.</p>
 
 		<h5>Bootstrap</h5>
 
@@ -80,27 +80,18 @@
 
 		<p>Finally, I am a lover of good documentation.  Bootstrap delivers.  Partly because their framework makes such sense and is easy to use already, their documentation is thorough but also easy to undertand, and even, dare I say, memorize.  How hard is it to remember that p is for padding!</p>
 
-		<p>I haven't really found anything not to love about Bootstrap.  It is great.  Thank you, Internet gods, for sending me this gift to use to structure my website.</p>
+		<h5>Summary</h5>
 
-		<p>For an easy reference, here is a guide to when you might want to use Material and when to use Bootstrap on your website:</p>
-
-		<p>Use Angular Material when:</p>
-		<ul>
-			<li>You are associating yourself with Google in some way (for example, a "log in with Google" screen)</li>
-			<li>You want your website to look unique and interesting</li>
-			<li>You already have a complete CSS framework (like Boostrap) and you're just looking to add in a few elements to make it pop</li>
-		</ul>
-
-		<p>Use Bootstrap when:</p>
-		<ul>
-			<li>You are developing a website...</li>
-		</ul>
+		<p>Overall, if you are developing a website in Angular, I would highly recommend Bootstrap over Angular Material for a CSS framework.  But if you have a specific use for Angular Material, or if you are affiliated with Google in some way, it wouldn't be too hard to add in the couple components that you need and use it in conjunction with Bootstrap.</p>
 
 		<h5>References</h5>
+
 		<ul>
 			<li><a href="https://material.angular.io/">Angular Material docs</a></li>
 			<li><a href="https://getbootstrap.com/">Bootstrap docs</a></li>
 		</ul>
+
+		<p>See you next time!</p>
 
 	</div>
 	
