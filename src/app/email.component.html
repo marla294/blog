@@ -25,5 +25,7 @@
 	<p>Form value: {{emailForm.value | json}}</p>
 	<p>Form status: {{emailForm.status | json}}</p>
 	<p>Form pristine: {{emailForm.pristine | json}}</p>
+	<button class="btn btn-secondary" (click)="this.onDataSet()">Post</button>
+	<button class="btn btn-secondary" (click)="this.onDataLoad()">Get</button>
 	<p>{{data}}</p>
 </div>

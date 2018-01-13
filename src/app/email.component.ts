@@ -1,6 +1,6 @@
 import { Component }								from '@angular/core';
 import { FormBuilder, FormGroup, Validators }		from '@angular/forms';
-import { HttpClient, HttpResponse }					from '@angular/common/http';
+import { HttpClient, HttpHeaders }					from '@angular/common/http';
 
 @Component({
 	selector: 'email',
@@ -9,14 +9,18 @@ import { HttpClient, HttpResponse }					from '@angular/common/http';
 })
 export class EmailComponent {
 	emailForm: FormGroup;
+
+	headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 	data: any;
+	dataPost = { data: "hola" };
+	body = 'data='+ JSON.stringify(this.dataPost);
 
 	constructor(private fb: FormBuilder, private http: HttpClient) {
 		this.createForm();
 	}
 
 	ngOnInit() {
-		this.onDataLoad();
+		/*this.onDataLoad();*/
 	}
 
 	createForm() {
@@ -32,8 +36,13 @@ export class EmailComponent {
 	}
 
 	onDataLoad() {
-		this.http.get('./assets/data/api/test.php')
-				.subscribe(res => this.data = res);
-		console.log(this.data);
+		this.http.get('http://localhost:7000')
+				.subscribe(res => console.log(res));
 	}
+
+	onDataSet() {
+		this.http.post('http://localhost:7000', this.body, {headers: this.headers})
+				.subscribe(res => console.log(res));
+	}
+
 }

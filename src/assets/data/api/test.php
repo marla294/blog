@@ -1,9 +1,14 @@
 <?php
+
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: *');
-header('Content-Type: application/x-www-form-urlencoded');
 header('Content-Type: application/json');
 
-	$data = "hi";
-	echo json_encode($data);
+
+if($_POST['data']) {
+	echo json_encode($_POST['data']);;
+}
+else {
+	echo json_encode("Get");
+}
+
 ?>
