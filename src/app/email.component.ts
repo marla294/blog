@@ -12,8 +12,12 @@ export class EmailComponent {
 
 	headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 	data: any;
-	dataPost = { data: "hola" };
-	body = 'data='+ JSON.stringify(this.dataPost);
+	dataPost = { 
+		name: "",
+		email: "",
+		body: ""
+	};
+
 
 	constructor(private fb: FormBuilder, private http: HttpClient) {
 		this.createForm();
@@ -35,14 +39,24 @@ export class EmailComponent {
 		console.log('Submitted');
 	}
 
-	onDataLoad() {
-		this.http.get('http://localhost:7000')
-				.subscribe(res => console.log(res));
+	/* PHP */
+
+	prepDataForPost() {
+		this.dataPost.name = 'name=' + JSON.stringify(this.emailForm.controls.senderName.value);
+		this.dataPost.email = 'email=' + JSON.stringify(this.emailForm.controls.senderEmail.value);
+		this.dataPost.body = 'body=' + JSON.stringify(this.emailForm.controls.messageBody.value);
 	}
 
+
 	onDataSet() {
-		this.http.post('http://localhost:7000', this.body, {headers: this.headers})
-				.subscribe(res => console.log(res));
+		this.prepDataForPost();
+
+		this.http.post('http://localhost:7000', this.dataPost.name, {headers: this.headers})
+			.subscribe(res => console.log(res));
+		this.http.post('http://localhost:7000', this.dataPost.email, {headers: this.headers})
+			.subscribe(res => console.log(res));
+		this.http.post('http://localhost:7000', this.dataPost.body, {headers: this.headers})
+			.subscribe(res => console.log(res));
 	}
 
 }
