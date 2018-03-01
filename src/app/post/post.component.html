@@ -146,6 +146,28 @@
 		<p>Well, that's all I've got for today.  Later!</p>
 
 	</div>
+
+	<div *ngSwitchCase="6">
+
+		<p>Hello!  I can't believe it's March already.  I had a great time writing the last post, and it's nice to have an outlet to just talk about what I'm working on.  So I figured I'd write a little bit more this morning about what I'm currently up to.</p>
+
+		<p>Got the idea a month or so ago to make a checkers game.  My son (5 years old) helped me test it :).  If you'd like to see it it's here: https://marla294.github.io/checkers/</p>
+
+		<p>Now I'm working on making a chess game in the same manner.  I copied the old checkers game code and extended it.  The chess game is here: https://marla294.github.io/chess/</p>
+
+		<p>What's been fun about making the chess game has been that it's a bit more complex than checkers.  First I got all the pieces moving around the board in the right way, and capturing other pieces like they should.  Then I had to figure out how to indicate that the king was in check.  Each time I did something new, I had to re-work the old code to make it do what I wanted.  Oh, this function should work for any piece on the board, not just the selected piece that I'm going to move.  Things like that.</p>
+
+		<p>Now I'm working on how to tell the user when someone wins the game.  This has been super hard, but fun to figure out.  I figured out that, when the king is in check, there can only be one piece that is checking the king at the time.  So there are 3 options for the team that is in check.  The first is to move the king out of check, if there is a space for him to move to.  The second is to take the piece that is checking the king.  And the third is to move a piece inbetween the piece that is checking the king and the king.</p>
+
+		<p>The interesting part for me has been to figure out how to code the checkmate function.  There's a couple routes that I can see to go.  The first route is to test the 3 scenarios mentioned above - whether the king can "run away," whether the checking piece can be taken, and whether a piece can be moved inbetween the checking piece and the king.  The second route would be to just figure out all the possible moves that the current team could make and see if, with one of them, the king is put in a safe position.</p>
+
+		<p>Option 1 is definitely less expensive.  You don't have to check all possible moves on the board, only the ones that would definitely help the king.  I went that route at first (before I thought of option 2).</p>
+
+		<p>But I think I'm going to try out option 2.  I've only coded the first 2 parts of option 1 (the king running away and taking the piece putting the king in check), and right now the thought of trying to figure out how to move a piece inbetween the checking piece and the king just makes me want to cry!  It seems very difficult given the way I've set up the code.  Also, after I finish making the chess game, I want to try putting in a "play against the computer" option, and the code for this could be re-used in that.  We'll see.  Perhaps the "moving every piece on the board" route is going to be way too slow and I'll have to go back to option 1 anyway.</p>
+
+		<p>Well, that's all I got... now I'm going to go try this!  Later!</p>
+
+	</div>
 	
 </div>
 
