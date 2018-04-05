@@ -12,7 +12,8 @@
 		},
 		{
 			"id": "3",
-			"title": "Comparing CSS Frameworks - Angular Material and Bootstrap",
+			"title":
+				"Comparing CSS Frameworks - Angular Material and Bootstrap",
 			"date": "1/10/2018"
 		},
 		{
@@ -34,7 +35,11 @@
 			"id": "7",
 			"title": "Pardon My Dust - Fixing Blog URL",
 			"date": "3/2/2018"
+		},
+		{
+			"id": "8",
+			"title": "Learning To React(JS)",
+			"date": "4/5/2018"
 		}
 	]
 }
-
