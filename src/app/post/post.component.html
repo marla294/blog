@@ -237,6 +237,46 @@
 
 	</div>
 
+	<div *ngSwitchCase="10">
+
+		<p>Hey hey!  I'm psyched that I got the fists to come through the json on the title of this post :).  It's the small things.</p>
+
+		<p>I'm taking my "lunch break" now so I figured I'd write a little post talking about the differences I see between Angular and React.  Currently I'm building a super simple resume website in React.  It's on Github (resume-app), though it is not "out there" to view on the internet yet.  Probably not going to host it through Github Pages this time, as I hear React apps are finicky with Github Pages, and I'll probably use now or something.  Anyhoo, through my limited, week-long experience with React, here are the differences between React and Angular that I've found.</p>
+
+		<h2>Services vs State</h2>
+
+		<p>Angular looooooooves services.  They have a whole module in their documentation on using dependency injection to set up services, and they recommend any and all data collection go into a service.  The service doesn't come with the Angular app.  You've gotta make your own and put it in there, and know where to inject it, all that good stuff.</p>
+
+		<p>React has a built in sort of service layer with the idea of state.  This is where you can store local data in your app.  It seems like state is typically defined on the App component of your React application, though I think you can also store state elsewhere if you prefer.</p>
+
+		<h2>Templates vs JSX</h2>
+
+		<p>Angular's components use external html template.  You can either write the html directly into the component file, or you can link to the html file.  All of this is done in the component decorator.</p>
+
+		<p>React uses JSX.  It's javascript/html hybrid.  You write your html and javascript together and return it for the component in a "render" statement.  There's no external template, at least not that I know of.  I suppose this kind of encourages the developer to break components down into smaller pieces, because otherwise your component file could get huge and unwieldly.</p>
+
+		<h2>Passing Data</h2>
+
+		<p>To pass data to a component in Angular, you have to set up an input variable inside the Angular component with an @Input decorator.  Then on your parent component you can pass data in like so: [your variable]="your data".</p>
+
+		<p>In React, data is passed around using props.  All you gotta do is say myprop = this.state.myprop (there should be brackets around this.state.myprop, but Angular uses those in templates to pass data and I am not going to spend time figuring out how to escape those right now) on your child component in the parent component and you've passed the data!</p>
+
+		<h2>Cool Dev Tools</h2>
+
+		<p>React has an awesome tool in Chrome that you can use to view the state and props on your app, and see how things are being rendered.  Angular doesn't have anything like that, to my knowledge.  Womp womp.</p>
+
+		<h2>Overall</h2>
+
+		<p>To me, it feels like React took all the setup stuff that Angular has and just built it in, so you can focus on just building a website.  You don't have to think about where you should inject your service to get data.  You don't have to remember to put an @input decorator on a variable in your component so you can pass data.  In some ways that is kind of nice.  But, it's possible that maybe later on I will want more control over how things are set up, and in that case I may want to use a tool like Angular.</p>
+
+		<p>Also, because you don't have to know or learn any design patterns and setup stuff, I can see how React would be a lot easier for developers to learn and use than Angular.  It really feels like Angular-lite!  I'm very glad that I learned Angular first, since I'm a new developer, because I learned a ton from going through their documentation.</p>
+
+		<p>I wouldn't say that I prefer one over the other.  It depends on what you are going for.  It seems like Angular would probably be best for big companies, creating an app that is closed behind a login page (Angular doesn't do pre-rendering very well, so SEO is bad, so it is not often used for blogs) and that they want a high degree of customization on.  I think that a newer developer would probably like React better, as it is easier to get up and running with.  It seems better suited for smaller web applications or for "fun" websites, like Instagram, and... dun dun DUNNN... Facebook.  It's modular and overally just a little more interesting and fun to work with in general.</p>
+
+		<p>That's it!  Take care,</p>
+
+	</div>
+
 	</div>
 	
 </div>
