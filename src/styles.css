@@ -13,6 +13,12 @@ body {
 	color: #fff;
 }
 
+pre {
+	color: #fff;
+	border: 1px solid white;
+	padding: 10px;
+}
+
 a {
 	text-decoration: none;
 	color: #fff;
