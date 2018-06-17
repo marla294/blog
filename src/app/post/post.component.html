@@ -331,6 +331,38 @@
 
 	</div>
 
+	<div *ngSwitchCase="13">
+
+		<p>Surprise!  I'm back.  I'm continuing to job hunt.  Interviewing, preparing for interviews, and finding places to interview at is surprisingly time and energy consuming.  I had an in-person interview this past Friday and I was pretty wiped for the whole weekend.  And more interviews coming next week!  Whew!  Talking to people is hard.</p>
+
+		<p>Realized I never wrote a post about a project I finished up on a couple months ago, Axe Quest (https://www.axequest.com/).  Before we get started here, no, I didn't come up with the name.  That was 100% my husband.  It has an alternate name that we registered, guitarsearch.com, but Axe Quest just makes everyone who hears about it laugh, so we stuck with that!</p>
+
+		<p>A little background.  My husband (Graydon) is really into guitars.  He is trying to curate the "perfect" collection.  I don't know much about them, but I know he loves Fender, Gibson, etc.  The nice ones!  The EXPENSIVE ones!  He works hard and is bringing home the bacon for us right now, so I let him have his fun... within reason!</p>
+
+		<p>He keeps an eye out on a few different websites for the guitars that he likes.  He was always checking like 10 different pages to see if they added anything new.  One day, after I had been doing this web development thing for a few months, he realized, duh - why don't we just make a website that scrapes all these guitar sites, and displays the results in one place?  So that's what we did.</p>
+
+		<p>Graydon is also a software developer.  He created the server for Axe Quest in .NET.  He scrapes the sites and the results are available at an API (that we have locked down).</p>
+
+		<p>I created the front end website in Angular.  When someone visits the page, I automatically do a HTTP Get request to grab the new arrivals.  There is a search bar on the top of the page that you can use for a specific search.  You can search either new arrivals (the new arrivals on each guitar site), or you can search the inventory, which holds all the guitars on each site.</p>
+
+		<p>I thought the most important thing with this website was to ensure that it would be secure.  We're scraping this data from these guitar websites, we don't want them to get mad at us because we left them vulnerable to hackers!  There were a couple things to consider.  One was the CORS stuff.  We didn't want other people to be able to access our API.  I won't go into detail there on how we locked it down, but we should be good there.  The other thing was form security.</p>
+
+		<p>The form is very simple.  It's just one search bar and a submit button.  However there were still vulnerablilities that I wanted to ensure weren't exposed.  One attack hackers can use is an injection attack, where they try to inject bad code through a field and get it to show up on the page.  Another would be submitting requests rapidly to try and take down the server.  For both of these attacks, I prevent them on the front end and my husband is also blocking them on the server.</p>
+
+		<p>Preventing the injection attacks was straightforward.  I simply remove any non-alphanumeric or space characters from the search term before sending it off to the server.  Input is limited to 50 characters.</p>
+
+		<p>Another thing I wanted to prevent was submitting requests too fast.  To do this I needed to throttle the input.  I'm using RxJS Observables to actually call the HTTP request, so I used the throttleTime operator to do that.</p>
+
+		<p>Another operator that came in handy was distinctUntilChanged.  If you run the exact same search twice or more in a row, there shouldn't be another HTTP request.  This will help prevent malicious behavior, and also if you mess up and accidentally search twice, you won't submit another HTTP request.</p>
+
+		<p>Finally, I used the switchMap operator in case you change your mind in the middle of a search.  If you start a search for Fender, and then change to Gibson while the Fender search is loading, the Fender search will cancel out and the Gibson search will be displayed.</p>
+
+		<p>More went into this website than I have described here, but this stuff was the most fun to figure out, for sure :)  Having a background in software testing definitely came in handy here.  I thought of all these things because I have tested for them in the past.  I'm sure I have not thought of everything... which was why I was hesitant about writing this post about Axe Quest and about putting the code out on GitHub.  But, wanting to talk about this interesting project has finally won out. </p> 
+
+		<p>I will write another post sometime soon about the CSS, the animations, and the filters and other things that went into Axe Quest.  Later!</p>
+
+	</div>
+
 	</div>
 	
 </div>
